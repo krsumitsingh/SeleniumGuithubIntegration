@@ -1,0 +1,1665 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="49" time="6029.903235">
+<testcase classname="Estimates Features Test Cases" name="Create Customer For Using it throughout" time="56.457895">
+<system-out><![CDATA[Given I login to Application................................................passed
+And I click on "Login.SignIn"...............................................passed
+Then I verify "Common.LandingPage"..........................................passed
+When I click on "Common.CRM"................................................passed
+Then I verify "CRM.CRMSerachLabel"..........................................passed
+And I click on "CRM.NewCustomerBtn".........................................passed
+And I verify "CRM.CustomerLabel"............................................passed
+And I enter "RandomNumber" in "Customer Code:Common.InputField".............passed
+And I enter "Raul Da Vinci" in "Customer Name:Common.InputField" then store as "CustomerName".passed
+And I enter "21st Malay Street" in "Address 1:Common.InputField"............passed
+And I enter "Prinston Avenue" in "Address 2:Common.InputField"..............passed
+And I enter "Fairfield" in "Address 3:Common.InputField"....................passed
+And I enter "Boston" in "City:Common.InputField"............................passed
+And I enter "VA" in "ST/Prov:Common.InputField".............................passed
+And I enter "96352" in "Zip/Postal:Common.InputField".......................passed
+And I enter "SM@redrass.com" in "Email:Common.InputField"...................passed
+And I click on "CRM.AccountWarningMessage"..................................passed
+And I click on "Save & Close:Common.Button".................................passed
+Then I verify "CRM.CRMSerachLabel"..........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Estimates Features Test Cases" name="Create Estimate without Selecting Customer" time="42.886685">
+<system-out><![CDATA[Given I login to Application................................................passed
+And I click on "Login.SignIn"...............................................passed
+Then I verify "Common.LandingPage"..........................................passed
+When I click on "Common.Estimates"..........................................passed
+And I verify "New Estimate:Common.Button"...................................passed
+And I click on "New Estimate:Common.Button".................................passed
+And I verify "Estimates.CustomerInputBox"...................................passed
+And I enter "Auto Estimate 1" in "Project:Common.InputField"................passed
+And I click on "Save:Common.Button".........................................passed
+And I veify "Please select a customer." in Alert............................passed
+And I accept Alert..........................................................passed
+And I click on "Cancel:Common.Button".......................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Estimates Features Test Cases" name="Create New Estimate without any services in Department" time="75.409827">
+<system-out><![CDATA[Given I login to Application................................................passed
+And I click on "Login.SignIn"...............................................passed
+Then I verify "Common.LandingPage"..........................................passed
+When I click on "Common.Estimates"..........................................passed
+And I verify "New Estimate:Common.Button"...................................passed
+And I click on "New Estimate:Common.Button".................................passed
+And I verify "Estimates.CustomerInputBox"...................................passed
+And I enter "DataMap-CustomerName" in "Estimates.CustomerInputBox"..........passed
+And I click on "DataMap-CustomerName:Common.DropDownOption_td"..............passed
+And I wait till "Common.Loading" is "Invisible".............................passed
+And I verify "Account Warning Message::Estimates.PromptBoxText".............passed
+And I click on "Common.WarningMsgOk"........................................passed
+And I enter "Automation Estimate " in "Project:Common.InputField" then store as "Estimate".passed
+And I click on "Save & Close:Common.Button".................................passed
+And I verify "Estimates.ProjectFilterSearch"................................passed
+And I enter "DataMap-Estimate" in "Estimates.ProjectFilterSearch"...........passed
+And I verify "DataMap-Estimate:Estimates.EstimateProjectRow"................passed
+And I click on "DataMap-Estimate:Estimates.EstimateProjectRow"..............passed
+And I verify "Estimates.CustomerInputBox"...................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Estimates Features Test Cases" name="Create Estimate with a Service" time="118.095544">
+<system-out><![CDATA[Given I login to Application................................................passed
+And I click on "Login.SignIn"...............................................passed
+Then I verify "Common.LandingPage"..........................................passed
+When I click on "Common.Estimates"..........................................passed
+And I verify "New Estimate:Common.Button"...................................passed
+And I click on "New Estimate:Common.Button".................................passed
+And I verify "Estimates.CustomerInputBox"...................................passed
+And I enter "DataMap-CustomerName" in "Estimates.CustomerInputBox"..........passed
+And I click on "DataMap-CustomerName:Common.DropDownOption_td"..............passed
+And I wait till "Common.Loading" is "Invisible".............................passed
+And I verify "Account Warning Message::Estimates.PromptBoxText".............passed
+And I click on "Common.WarningMsgOk"........................................passed
+And I clear the text "Sales Rep:Common.InputField_s"........................passed
+And I enter "Brian Moore" in "Sales Rep:Common.InputField_s"................passed
+And I click on "Sales Rep:Common.InputField_s"..............................passed
+And I clear the text "CSR:Common.InputField_s"..............................passed
+And I enter "Chris Huber" in "CSR:Common.InputField_s"......................passed
+And I click on "CSR:Common.InputField_s"....................................passed
+And I clear the text "Company:Common.InputField_s"..........................passed
+And I enter "Midnight Printing" in "Company:Common.InputField_s"............passed
+And I click on "Company:Common.InputField_s"................................passed
+And I enter "***Automation Estimate***" in "Project:Common.InputField" then store as "Estimate".passed
+And I enter "1250" in "Expected Qty:Common.InputField"......................passed
+Then I click on "Data:Common.DepartmentMenu"................................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I click on "0:Common.ServiceComboBox"...................................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I enter "CASS" in "0:Common.ServiceComboBox"............................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I click on "Save & Close:Common.Button".................................passed
+Then I verify "Estimates.EstimateSearchPage"................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Estimates Features Test Cases" name="Create Estimate with services-Wizard" time="120.599839">
+<system-out><![CDATA[Given I login to Application................................................passed
+And I click on "Login.SignIn"...............................................passed
+Then I verify "Common.LandingPage"..........................................passed
+When I click on "Common.Estimates"..........................................passed
+And I verify "New Estimate:Common.Button"...................................passed
+And I click on "New Estimate:Common.Button".................................passed
+And I verify "Estimates.CustomerInputBox"...................................passed
+And I enter "DataMap-CustomerName" in "Estimates.CustomerInputBox"..........passed
+And I click on "DataMap-CustomerName:Common.DropDownOption_td"..............passed
+And I wait till "Common.Loading" is "Invisible".............................passed
+And I verify "Account Warning Message::Estimates.PromptBoxText".............passed
+And I click on "Common.WarningMsgOk"........................................passed
+And I clear the text "Sales Rep:Common.InputField_s"........................passed
+And I enter "Brian Moore" in "Sales Rep:Common.InputField_s"................passed
+And I click on "Sales Rep:Common.InputField_s"..............................passed
+And I clear the text "CSR:Common.InputField_s"..............................passed
+And I enter "Chris Huber" in "CSR:Common.InputField_s"......................passed
+And I click on "CSR:Common.InputField_s"....................................passed
+And I clear the text "Company:Common.InputField_s"..........................passed
+And I enter "Midnight Printing" in "Company:Common.InputField_s"............passed
+And I click on "Company:Common.InputField_s"................................passed
+And I enter "***Automation Estimate***" in "Project:Common.InputField" then store as "Estimate".passed
+And I enter "12500" in "Expected Qty:Common.InputField".....................passed
+Then I click on "Data:Common.DepartmentMenu"................................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I click on "0:Common.ServiceComboBox"...................................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I enter "Address Setup 0" in "0:Common.ServiceComboBox".................passed
+And I wait for "5" seconds..................................................passed
+And I click on "0:Common.ServiceDescriptionEditBox".........................passed
+And I verified "Common.WizardServicePopup"..................................passed
+And I verify "Hand Match Perfect:Common.WizardServicePopupMessage"..........passed
+And I click on "0:Common.WizardSuccessorSelected"...........................passed
+And I wait for "3" seconds..................................................passed
+Then I check default content switch.........................................passed
+And I click on "Save & Close:Common.Button".................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Estimates Features Test Cases" name="Open an Estimate and add SWF Calculator" time="150.003648">
+<system-out><![CDATA[Given I login to Application................................................passed
+And I click on "Login.SignIn"...............................................passed
+Then I verify "Common.LandingPage"..........................................passed
+When I click on "Common.Estimates"..........................................passed
+And I wait for "5" seconds..................................................passed
+And I verify "Estimates.EstimateSearchPage".................................passed
+And I click on "Common.ClearFilters"........................................passed
+And I wait for "5" seconds..................................................passed
+And I click on "Estimates.EstimateNumberCreated"............................passed
+And I wait till "Common.Loading" is "Invisible".............................passed
+And I verify "Estimates.CustomerInputBox"...................................passed
+And I wait for "5" seconds..................................................passed
+Then I click on "Wide Format:Common.DepartmentMenu".........................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I click on "0:Common.ServiceComboBox"...................................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I enter "_Vehicle Wrap" in "0:Common.ServiceComboBox"...................passed
+And I wait for "5" seconds..................................................passed
+And I click on "0:Common.ServiceDescriptionEditBox".........................passed
+And I verified "Common.WideFormatCalculator"................................passed
+And I verify "Wide Format Estimate:Common.WideFormatEstimate"...............passed
+And I click on "wfEstimateProductType:Common.SWFComboBox"...................passed
+And I enter "18 x 24 Yard Sign" in "wfEstimateProductType:Common.SWFComboBox".passed
+And I wait for "5" seconds..................................................passed
+And I click on "wideFormatStockId:Common.SWFComboBox".......................passed
+And I enter "Canvas60" in "wideFormatStockId:Common.SWFComboBox"............passed
+And I wait for "5" seconds..................................................passed
+And I click on "Common.WFMessageEditor".....................................passed
+And I enter "Automation Script-Adding comments for simple wide format" in "Common.WFMessageEditor".passed
+And I click on "Save:Common.Button".........................................passed
+And I wait for "5" seconds..................................................passed
+And I click on "Save & Close:Common.Button".................................passed
+And I wait for "3" seconds..................................................passed
+Then I check default content switch.........................................passed
+And I wait for "3" seconds..................................................passed
+And I click on "Save & Close:Common.Button".................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Estimates Features Test Cases" name="Open an Estimate and add AWF Calculator" time="139.914434">
+<system-out><![CDATA[Given I login to Application................................................passed
+And I click on "Login.SignIn"...............................................passed
+Then I verify "Common.LandingPage"..........................................passed
+When I click on "Common.Estimates"..........................................passed
+And I wait for "5" seconds..................................................passed
+And I verify "Estimates.EstimateSearchPage".................................passed
+And I click on "Common.ClearFilters"........................................passed
+And I wait for "5" seconds..................................................passed
+And I click on "Estimates.EstimateNumberCreated"............................passed
+And I wait till "Common.Loading" is "Invisible".............................passed
+And I verify "Estimates.CustomerInputBox"...................................passed
+And I wait for "5" seconds..................................................passed
+Then I click on "Wide Format:Common.DepartmentMenu".........................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I click on "1:Common.ServiceComboBox"...................................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I enter "_Banner" in "1:Common.ServiceComboBox".........................passed
+And I wait for "2" seconds..................................................passed
+And I click on "1:Common.ServiceDescriptionEditBox".........................passed
+And I verified "Common.WideFormatCalculator"................................passed
+And I wait for "5" seconds..................................................passed
+And I click on "Common.AWFTemplateName".....................................passed
+And I clear the text "Common.AWFTemplateName"...............................passed
+And I wait for "3" seconds..................................................passed
+And I enter "Vehicle Wrap" in "Common.AWFTemplateName"......................passed
+And I click on "Common.Description".........................................passed
+And I click on "Common.CalculateButton".....................................passed
+And I wait for "5" seconds..................................................passed
+And I click on "Save & Close:Common.Button".................................passed
+And I wait for "3" seconds..................................................passed
+Then I check default content switch.........................................passed
+And I wait for "3" seconds..................................................passed
+And I click on "Save & Close:Common.Button".................................passed
+And I verify "Estimates.EstimateSearchPage".................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Estimates Features Test Cases" name="Open an Estimate and add Print Calculator" time="178.551981">
+<system-out><![CDATA[Given I login to Application................................................passed
+And I click on "Login.SignIn"...............................................passed
+Then I verify "Common.LandingPage"..........................................passed
+When I click on "Common.Estimates"..........................................passed
+And I wait for "5" seconds..................................................passed
+And I verify "Estimates.EstimateSearchPage".................................passed
+And I click on "Common.ClearFilters"........................................passed
+And I wait for "5" seconds..................................................passed
+And I click on "Estimates.EstimateNumberCreated"............................passed
+And I wait till "Common.Loading" is "Invisible".............................passed
+And I verify "Estimates.CustomerInputBox"...................................passed
+And I wait for "3" seconds..................................................passed
+Then I click on "Print:Common.DepartmentMenu"...............................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I click on "0:Common.ServiceComboBox"...................................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I enter ".PS" in "0:Common.ServiceComboBox".............................passed
+And I wait for "2" seconds..................................................passed
+And I click on "0:Common.ServiceDescriptionEditBox".........................passed
+Then I check "Common.PrintCalculator".......................................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I click on "Common.PCTemplateName"......................................passed
+And I clear the text "Common.PCTemplateName"................................passed
+And I wait for "3" seconds..................................................passed
+And I enter "52" in "Common.PCTemplateName".................................passed
+And I wait for "10" seconds.................................................passed
+And I click on "Common.PrintCalculateButton"................................passed
+And I wait for "10" seconds.................................................passed
+And I click on "Common.PrintCalculateButton"................................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I click on "Common.PrintSubmitButton"...................................passed
+And I wait for "3" seconds..................................................passed
+Then I check default content switch.........................................passed
+And I wait for "5" seconds..................................................passed
+And I click on "Save & Close:Common.Button".................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Estimates Features Test Cases" name="Open an Estimate and add Attachment" time="142.451009">
+<system-out><![CDATA[Given I login to Application................................................passed
+And I click on "Login.SignIn"...............................................passed
+Then I verify "Common.LandingPage"..........................................passed
+When I click on "Common.Estimates"..........................................passed
+And I wait for "5" seconds..................................................passed
+And I verify "Estimates.EstimateSearchPage".................................passed
+And I click on "Common.ClearFilters"........................................passed
+And I wait for "5" seconds..................................................passed
+And I click on "Estimates.EstimateNumberCreated"............................passed
+And I wait till "Common.Loading" is "Invisible".............................passed
+And I verify "Estimates.CustomerInputBox"...................................passed
+And I wait for "3" seconds..................................................passed
+Then I click on "Attachments:Common.HeaderTabs".............................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I upload an Attachment..................................................passed
+And I click on "Save & Close:Common.Button".................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Estimates Features Test Cases" name="Open an Estimate and Copy it" time="109.12899">
+<system-out><![CDATA[Given I login to Application................................................passed
+And I click on "Login.SignIn"...............................................passed
+Then I verify "Common.LandingPage"..........................................passed
+When I click on "Common.Estimates"..........................................passed
+And I wait for "5" seconds..................................................passed
+And I verify "Estimates.ProjectFilterSearch"................................passed
+And I enter "DataMap-Estimate" in "Estimates.ProjectFilterSearch"...........passed
+And I verify "DataMap-Estimate:Estimates.EstimateProjectRow"................passed
+And I click on "DataMap-Estimate:Estimates.EstimateProjectRow"..............passed
+And I verify "Estimates.CustomerInputBox"...................................passed
+And I wait for "5" seconds..................................................passed
+And I click on "Copy:Common.Button".........................................passed
+And I wait till "Common.Loading" is "Invisible".............................passed
+And I verify "Estimates.CopyMessageBox".....................................passed
+And I wait for "5" seconds..................................................passed
+And I click on "Estimates.EstimateCopiedBtnOK"..............................passed
+And I wait till "Common.Loading" is "Invisible".............................passed
+And I verify "Account Warning Message::Estimates.PromptBoxText".............passed
+And I click on "Common.WarningMsgOk"........................................passed
+And I wait for "5" seconds..................................................passed
+And I click on "Save & Close:Common.Button".................................passed
+And I wait for "5" seconds..................................................passed
+And I click on "Common.ClearFilters"........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Estimates Features Test Cases" name="Open an Estimate and Export it to an Order" time="112.259622">
+<system-out><![CDATA[Given I login to Application................................................passed
+And I click on "Login.SignIn"...............................................passed
+Then I verify "Common.LandingPage"..........................................passed
+When I click on "Common.Estimates"..........................................passed
+And I verify "Estimates.ProjectFilterSearch"................................passed
+And I enter "DataMap-Estimate" in "Estimates.ProjectFilterSearch"...........passed
+And I verify "DataMap-Estimate:Estimates.EstimateProjectRow"................passed
+And I click on "DataMap-Estimate:Estimates.EstimateProjectRow"..............passed
+And I verify "Estimates.CustomerInputBox"...................................passed
+And I click on "Export to Order:Estimates.ExportToOrder"....................passed
+And I wait till "Common.Loading" is "Invisible".............................passed
+And I verify "Estimate Exported to Order Successfully:Orders.ExportedToOrderSuccessfullyMsg".passed
+And I wait for "10" seconds.................................................passed
+And I click on "Orders.ExportedToOrderOKBtn"................................passed
+And I wait for "10" seconds.................................................passed
+And I verify "Orders.AccountWarningMsg".....................................passed
+And I click on "Orders.WarningMsgOk"........................................passed
+And I wait for "5" seconds..................................................passed
+And I click on "Save & Close:Common.Button".................................passed
+And I click on "Common.Estimates"...........................................passed
+And I wait for "5" seconds..................................................passed
+And I click on "Common.ClearFilters"........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Estimates Features Test Cases" name="Open an Estimate and Delete it" time="76.066464">
+<system-out><![CDATA[Given I login to Application................................................passed
+And I click on "Login.SignIn"...............................................passed
+Then I verify "Common.LandingPage"..........................................passed
+When I click on "Common.Estimates"..........................................passed
+And I verify "Estimates.ProjectFilterSearch"................................passed
+And I enter "DataMap-Estimate" in "Estimates.ProjectFilterSearch"...........passed
+And I verify "DataMap-Estimate:Estimates.EstimateProjectRow"................passed
+And I click on "DataMap-Estimate:Estimates.EstimateProjectRow"..............passed
+And I verify "Estimates.CustomerInputBox"...................................passed
+And I wait for "5" seconds..................................................passed
+And I click on "Delete:Common.Button".......................................passed
+And I wait for "5" seconds..................................................passed
+And I accept Alert..........................................................passed
+And I wait till "Common.Loading" is "Invisible".............................passed
+Then I verify "Estimates.EstimateSearchPage"................................passed
+And I wait for "5" seconds..................................................passed
+And I click on "Common.ClearFilters"........................................passed
+And I wait for "5" seconds..................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Estimates Features Test Cases" name="Open an Estimate and create Multiple Quantity and Order Export" time="150.389052">
+<system-out><![CDATA[Given I login to Application................................................passed
+And I click on "Login.SignIn"...............................................passed
+Then I verify "Common.LandingPage"..........................................passed
+When I click on "Common.Estimates"..........................................passed
+And I wait for "5" seconds..................................................passed
+And I verify "Estimates.EstimateSearchPage".................................passed
+And I click on "Common.ClearFilters"........................................passed
+And I wait for "5" seconds..................................................passed
+And I click on "Estimates.EstimateNumberCreated"............................passed
+And I wait till "Common.Loading" is "Invisible".............................passed
+And I verify "Estimates.CustomerInputBox"...................................passed
+And I wait for "5" seconds..................................................passed
+Then I click on "Multiple Qtys:Common.DepartmentMenu".......................passed
+And I wait for "10" seconds.................................................passed
+And I enter "25800" in "Estimates.MQTextBox"................................passed
+And I click on "Estimates.MQUpdateButton"...................................passed
+And I wait till "Common.Loading" is "Invisible".............................passed
+And I click on "Estimates.MQExportToOrder"..................................passed
+And I wait till "Common.Loading" is "Invisible".............................passed
+And I verify "Estimate Exported to Order Successfully:Orders.ExportedToOrderSuccessfullyMsg".passed
+And I wait for "5" seconds..................................................passed
+And I click on "Orders.ExportedToOrderOKBtn"................................passed
+And I wait for "5" seconds..................................................passed
+And I verify "Orders.AccountWarningMsg".....................................passed
+And I click on "Orders.WarningMsgOk"........................................passed
+And I wait for "5" seconds..................................................passed
+And I click on "Save & Close:Common.Button".................................passed
+And I click on "Common.Estimates"...........................................passed
+And I wait for "2" seconds..................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Estimates Features Test Cases" name="Open an Estimate and Update the expected Qty - &quot;Yes&quot;" time="82.168538">
+<system-out><![CDATA[Given I login to Application................................................passed
+And I click on "Login.SignIn"...............................................passed
+Then I verify "Common.LandingPage"..........................................passed
+When I click on "Common.Estimates"..........................................passed
+And I wait for "5" seconds..................................................passed
+And I verify "Estimates.EstimateSearchPage".................................passed
+And I click on "Common.ClearFilters"........................................passed
+And I wait for "5" seconds..................................................passed
+And I click on "Estimates.EstimateNumberCreated"............................passed
+And I wait till "Common.Loading" is "Invisible".............................passed
+And I verify "Estimates.CustomerInputBox"...................................passed
+And I wait for "5" seconds..................................................passed
+And I enter "14580" in "Common.UpdateQtyField"..............................passed
+And I click on "Update:Common.Button".......................................passed
+And I wait for "3" seconds..................................................passed
+And I verified "Common.UpdateQtyPopup"......................................passed
+And I verify "Do you want to recalculate unit prices? Pressing Yes or No will save changes to estimate.:Common.UpdateQtyPopupMessage".passed
+And I click on "Common.QtyUpdatePopupYesButton".............................passed
+And I wait for "3" seconds..................................................passed
+Then I check default content switch.........................................passed
+And I click on "Save & Close:Common.Button".................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Estimates Features Test Cases" name="Open an Estimate and Update the expected Qty - &quot;No&quot;" time="80.973654">
+<system-out><![CDATA[Given I login to Application................................................passed
+And I click on "Login.SignIn"...............................................passed
+Then I verify "Common.LandingPage"..........................................passed
+When I click on "Common.Estimates"..........................................passed
+And I wait for "5" seconds..................................................passed
+And I verify "Estimates.EstimateSearchPage".................................passed
+And I click on "Common.ClearFilters"........................................passed
+And I wait for "5" seconds..................................................passed
+And I click on "Estimates.EstimateNumberCreated"............................passed
+And I wait till "Common.Loading" is "Invisible".............................passed
+And I verify "Estimates.CustomerInputBox"...................................passed
+And I wait for "5" seconds..................................................passed
+And I enter "7450" in "Common.UpdateQtyField"...............................passed
+And I click on "Update:Common.Button".......................................passed
+And I wait for "3" seconds..................................................passed
+And I verified "Common.UpdateQtyPopup"......................................passed
+And I verify "Do you want to recalculate unit prices? Pressing Yes or No will save changes to estimate.:Common.UpdateQtyPopupMessage".passed
+And I click on "Common.QtyUpdatePopupNoButton"..............................passed
+And I wait for "3" seconds..................................................passed
+Then I check default content switch.........................................passed
+And I click on "Save & Close:Common.Button".................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Estimates Features Test Cases" name="Open an Estimate and Edit Services Description, Quantity in department tabs" time="119.866803">
+<system-out><![CDATA[Given I login to Application................................................passed
+And I click on "Login.SignIn"...............................................passed
+Then I verify "Common.LandingPage"..........................................passed
+When I click on "Common.Estimates"..........................................passed
+And I wait for "5" seconds..................................................passed
+And I verify "Estimates.EstimateSearchPage".................................passed
+And I click on "Common.ClearFilters"........................................passed
+And I wait for "5" seconds..................................................passed
+And I click on "Estimates.EstimateNumberCreated"............................passed
+And I wait till "Common.Loading" is "Invisible".............................passed
+And I verify "Estimates.CustomerInputBox"...................................passed
+And I wait for "5" seconds..................................................passed
+Then I click on "Data:Common.DepartmentMenu"................................passed
+And I wait till "Common.Loading" is "Invisible".............................passed
+And I enter "/Data Services - c21 Customizable Sell Sheet  -" in "0:Common.ServiceDescriptionEditBox".passed
+And I click on "Save:Common.Button".........................................passed
+And I wait till "Common.Loading" is "Invisible".............................passed
+And I clear the text "0:Common.QuantityTextBox".............................passed
+And I wait for "2" seconds..................................................passed
+And I enter "588.321" in "0:Common.QuantityTextBox".........................passed
+And I wait for "2" seconds..................................................passed
+And I click on "0:Common.UnitPriceTextBox"..................................passed
+And I verify "Keep existing Unit Price?:Common.UnitPricePopUp"..............passed
+And I wait for "5" seconds..................................................passed
+And I click on "Common.UnitPriceUpdateNoBtn"................................passed
+And I wait for "4" seconds..................................................passed
+And I click on "Save & Close:Common.Button".................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Orders Features Test Cases" name="Create Customer For Using it throughout" time="50.22561">
+<system-out><![CDATA[Given I login to Application................................................passed
+And I click on "Login.SignIn"...............................................passed
+Then I verify "Common.LandingPage"..........................................passed
+When I click on "Common.CRM"................................................passed
+Then I verify "CRM.CRMSerachLabel"..........................................passed
+And I click on "CRM.NewCustomerBtn".........................................passed
+And I verify "CRM.CustomerLabel"............................................passed
+And I enter "RandomNumber" in "Customer Code:Common.InputField".............passed
+And I enter "John Cenna" in "Customer Name:Common.InputField" then store as "CustomerName".passed
+And I enter "22nd Jackson Street" in "Address 1:Common.InputField"..........passed
+And I enter "Prinston Avenue" in "Address 2:Common.InputField"..............passed
+And I enter "Fairfield" in "Address 3:Common.InputField"....................passed
+And I enter "Boston" in "City:Common.InputField"............................passed
+And I enter "VA" in "ST/Prov:Common.InputField".............................passed
+And I enter "96352" in "Zip/Postal:Common.InputField".......................passed
+And I enter "Sam@redrass.com" in "Email:Common.InputField"..................passed
+And I click on "CRM.AccountWarningMessage"..................................passed
+And I click on "Save & Close:Common.Button".................................passed
+Then I verify "CRM.CRMSerachLabel"..........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Orders Features Test Cases" name="Create Order without Selecting Customer" time="40.217702">
+<system-out><![CDATA[Given I login to Application................................................passed
+And I click on "Login.SignIn"...............................................passed
+Then I verify "Common.LandingPage"..........................................passed
+When I click on "Common.Orders".............................................passed
+And I verify "New Order:Common.Button"......................................passed
+And I click on "New Order:Common.Button"....................................passed
+And I verify "Orders.CustomerInputBox"......................................passed
+And I enter "Order Automation_Comments" in "Orders.Project".................passed
+And I click on "Save:Common.Button".........................................passed
+And I veify "Please select a customer." in Alert............................passed
+And I accept Alert..........................................................passed
+And I click on "Cancel:Common.Button".......................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Orders Features Test Cases" name="Create New Order without any services in Department" time="79.900109">
+<system-out><![CDATA[Given I login to Application................................................passed
+And I click on "Login.SignIn"...............................................passed
+Then I verify "Common.LandingPage"..........................................passed
+When I click on "Common.Orders".............................................passed
+And I verify "New Order:Common.Button"......................................passed
+And I click on "New Order:Common.Button"....................................passed
+And I verify "Orders.CustomerInputBox"......................................passed
+And I enter "DataMap-CustomerName" in "Orders.CustomerInputBox".............passed
+And I click on "DataMap-CustomerName:Common.DropDownOption_td"..............passed
+And I wait till "Common.Loading" is "Invisible".............................passed
+And I verify "Account Warning Message::Orders.PromptBoxText"................passed
+And I click on "Common.WarningMsgOk"........................................passed
+And I enter "Order without any service " in "Orders.Project" then store as "Order".passed
+And I click on "Save & Close:Common.Button".................................passed
+And I verify "Orders.ProjectFilterSearch"...................................passed
+And I enter "DataMap-Order" in "Orders.ProjectFilterSearch".................passed
+And I verify "DataMap-Order:Orders.OrderProjectRow".........................passed
+And I click on "DataMap-Order:Orders.OrderProjectRow".......................passed
+And I verify "Orders.CustomerInputBox"......................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Orders Features Test Cases" name="Create Order with a Service" time="122.705226">
+<system-out><![CDATA[Given I login to Application................................................passed
+And I click on "Login.SignIn"...............................................passed
+Then I verify "Common.LandingPage"..........................................passed
+When I click on "Common.Orders".............................................passed
+And I verify "New Order:Common.Button"......................................passed
+And I click on "New Order:Common.Button"....................................passed
+And I verify "Orders.CustomerInputBox"......................................passed
+And I enter "DataMap-CustomerName" in "Orders.CustomerInputBox".............passed
+And I click on "DataMap-CustomerName:Common.DropDownOption_td"..............passed
+And I wait till "Common.Loading" is "Invisible".............................passed
+And I verify "Account Warning Message::Orders.PromptBoxText"................passed
+And I click on "Common.WarningMsgOk"........................................passed
+And I clear the text "Sales Rep:Common.InputField_s"........................passed
+And I enter "Brian Moore" in "Sales Rep:Common.InputField_s"................passed
+And I click on "Sales Rep:Common.InputField_s"..............................passed
+And I clear the text "CSR:Common.InputField_s"..............................passed
+And I enter "Chris Huber" in "CSR:Common.InputField_s"......................passed
+And I click on "CSR:Common.InputField_s"....................................passed
+And I clear the text "Company:Common.InputField_s"..........................passed
+And I enter "Midnight Printing" in "Company:Common.InputField_s"............passed
+And I click on "Company:Common.InputField_s"................................passed
+And I enter "Order with No Action service " in "Orders.Project" then store as "Order".passed
+And I enter "1250" in "Orders.ExpectedQuantity".............................passed
+Then I click on "Data:Common.DepartmentMenu"................................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I click on "0:Orders.OrderServiceComboBox"..............................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I enter "CASS" in "0:Orders.OrderServiceComboBox".......................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I click on "Save & Close:Common.Button".................................passed
+Then I verify "Orders.OrderSearchPage"......................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Orders Features Test Cases" name="Create Order with services-Wizard" time="124.632761">
+<system-out><![CDATA[Given I login to Application................................................passed
+And I click on "Login.SignIn"...............................................passed
+Then I verify "Common.LandingPage"..........................................passed
+When I click on "Common.Orders".............................................passed
+And I verify "New Order:Common.Button"......................................passed
+And I click on "New Order:Common.Button"....................................passed
+And I verify "Orders.CustomerInputBox"......................................passed
+And I enter "DataMap-CustomerName" in "Orders.CustomerInputBox".............passed
+And I click on "DataMap-CustomerName:Common.DropDownOption_td"..............passed
+And I wait till "Common.Loading" is "Invisible".............................passed
+And I verify "Account Warning Message::Orders.PromptBoxText"................passed
+And I click on "Common.WarningMsgOk"........................................passed
+And I clear the text "Sales Rep:Common.InputField_s"........................passed
+And I enter "Brian Moore" in "Sales Rep:Common.InputField_s"................passed
+And I click on "Sales Rep:Common.InputField_s"..............................passed
+And I clear the text "CSR:Common.InputField_s"..............................passed
+And I enter "Chris Huber" in "CSR:Common.InputField_s"......................passed
+And I click on "CSR:Common.InputField_s"....................................passed
+And I clear the text "Company:Common.InputField_s"..........................passed
+And I enter "Midnight Printing" in "Company:Common.InputField_s"............passed
+And I click on "Company:Common.InputField_s"................................passed
+And I enter "Order with Wizard service " in "Orders.Project" then store as "Order".passed
+And I enter "1250" in "Orders.ExpectedQuantity".............................passed
+Then I click on "Data:Common.DepartmentMenu"................................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I click on "0:Orders.OrderServiceComboBox"..............................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I enter "Address Setup 0" in "0:Orders.OrderServiceComboBox"............passed
+And I wait for "5" seconds..................................................passed
+And I click on "Common.POTextBox"...........................................passed
+And I verified "Common.WizardServicePopup"..................................passed
+And I verify "Hand Match Perfect:Common.WizardServicePopupMessage"..........passed
+And I click on "0:Common.WizardSuccessorSelected"...........................passed
+And I wait for "3" seconds..................................................passed
+Then I check default content switch.........................................passed
+And I click on "Save & Close:Common.Button".................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Orders Features Test Cases" name="Open an Order and add SWF Calculator" time="143.931163">
+<system-out><![CDATA[Given I login to Application................................................passed
+And I click on "Login.SignIn"...............................................passed
+Then I verify "Common.LandingPage"..........................................passed
+When I click on "Common.Orders".............................................passed
+And I wait for "5" seconds..................................................passed
+And I verify "Orders.OrderSearchPage".......................................passed
+And I click on "Orders.OrderNumberCreated"..................................passed
+And I wait till "Common.Loading" is "Invisible".............................passed
+And I verify "Orders.CustomerInputBox"......................................passed
+And I wait for "5" seconds..................................................passed
+Then I click on "Wide Format:Common.DepartmentMenu".........................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I click on "0:Orders.OrderServiceComboBox"..............................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I enter "_Vehicle Wrap" in "0:Orders.OrderServiceComboBox"..............passed
+And I wait for "5" seconds..................................................passed
+And I click on "Common.POTextBox"...........................................passed
+And I verified "Common.WideFormatCalculator"................................passed
+And I verify "Orders.WideFormatLabel".......................................passed
+And I click on "wfEstimateProductType:Common.SWFComboBox"...................passed
+And I enter "18 x 24 Yard Sign" in "wfEstimateProductType:Common.SWFComboBox".passed
+And I wait for "5" seconds..................................................passed
+And I click on "wideFormatStockId:Common.SWFComboBox".......................passed
+And I enter "Canvas60" in "wideFormatStockId:Common.SWFComboBox"............passed
+And I wait for "5" seconds..................................................passed
+And I click on "Common.WFMessageEditor".....................................passed
+And I enter "Automation Script-Adding comments for simple wide format" in "Common.WFMessageEditor".passed
+And I click on "Save:Common.Button".........................................passed
+And I wait for "5" seconds..................................................passed
+And I click on "Save & Close:Common.Button".................................passed
+And I wait for "3" seconds..................................................passed
+Then I check default content switch.........................................passed
+And I wait for "3" seconds..................................................passed
+And I click on "Save & Close:Common.Button".................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Orders Features Test Cases" name="Open an Order and add AWF Calculator" time="137.211687">
+<system-out><![CDATA[Given I login to Application................................................passed
+And I click on "Login.SignIn"...............................................passed
+Then I verify "Common.LandingPage"..........................................passed
+When I click on "Common.Orders".............................................passed
+And I wait for "5" seconds..................................................passed
+And I verify "Orders.OrderSearchPage".......................................passed
+And I click on "Orders.OrderNumberCreated"..................................passed
+And I wait till "Common.Loading" is "Invisible".............................passed
+And I verify "Orders.CustomerInputBox"......................................passed
+And I wait for "5" seconds..................................................passed
+Then I click on "Wide Format:Common.DepartmentMenu".........................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I click on "1:Orders.OrderServiceComboBox"..............................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I enter "_Banner" in "1:Orders.OrderServiceComboBox"....................passed
+And I wait for "2" seconds..................................................passed
+And I click on "Common.POTextBox"...........................................passed
+And I verified "Common.WideFormatCalculator"................................passed
+And I wait for "5" seconds..................................................passed
+And I click on "Common.AWFTemplateName".....................................passed
+And I clear the text "Common.AWFTemplateName"...............................passed
+And I wait for "3" seconds..................................................passed
+And I enter "Vehicle Wrap" in "Common.AWFTemplateName"......................passed
+And I click on "Common.Description".........................................passed
+And I click on "Common.CalculateButton".....................................passed
+And I wait for "5" seconds..................................................passed
+And I click on "Save & Close:Common.Button".................................passed
+And I wait for "3" seconds..................................................passed
+Then I check default content switch.........................................passed
+And I wait for "3" seconds..................................................passed
+And I click on "Save & Close:Common.Button".................................passed
+Then I verify "Orders.OrderSearchPage"......................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Orders Features Test Cases" name="Open an Order and add Print Calculator" time="175.882466">
+<system-out><![CDATA[Given I login to Application................................................passed
+And I click on "Login.SignIn"...............................................passed
+Then I verify "Common.LandingPage"..........................................passed
+When I click on "Common.Orders".............................................passed
+And I wait for "5" seconds..................................................passed
+And I verify "Orders.OrderSearchPage".......................................passed
+And I click on "Orders.OrderNumberCreated"..................................passed
+And I wait till "Common.Loading" is "Invisible".............................passed
+And I verify "Orders.CustomerInputBox"......................................passed
+And I wait for "5" seconds..................................................passed
+Then I click on "Print:Common.DepartmentMenu"...............................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I click on "0:Orders.OrderServiceComboBox"..............................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I enter ".PS" in "0:Orders.OrderServiceComboBox"........................passed
+And I wait for "2" seconds..................................................passed
+And I click on "Common.POTextBox"...........................................passed
+Then I check "Common.PrintCalculator".......................................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I click on "Common.PCTemplateName"......................................passed
+And I clear the text "Common.PCTemplateName"................................passed
+And I wait for "3" seconds..................................................passed
+And I enter "52" in "Common.PCTemplateName".................................passed
+And I wait for "10" seconds.................................................passed
+And I click on "Common.PrintCalculateButton"................................passed
+And I wait for "10" seconds.................................................passed
+And I click on "Common.PrintCalculateButton"................................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I click on "Common.PrintSubmitButton"...................................passed
+And I wait for "3" seconds..................................................passed
+Then I check default content switch.........................................passed
+And I wait for "5" seconds..................................................passed
+And I click on "Save & Close:Common.Button".................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Orders Features Test Cases" name="Open an Order and add Attachment" time="135.951875">
+<system-out><![CDATA[Given I login to Application................................................passed
+And I click on "Login.SignIn"...............................................passed
+Then I verify "Common.LandingPage"..........................................passed
+When I click on "Common.Orders".............................................passed
+And I wait for "5" seconds..................................................passed
+And I verify "Orders.OrderSearchPage".......................................passed
+And I click on "Orders.OrderNumberCreated"..................................passed
+And I wait till "Common.Loading" is "Invisible".............................passed
+And I verify "Orders.CustomerInputBox"......................................passed
+And I wait for "3" seconds..................................................passed
+Then I click on "Attachments:Common.HeaderTabs".............................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I upload an Attachment..................................................passed
+And I click on "Save & Close:Common.Button".................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Orders Features Test Cases" name="Open an Order and Copy it" time="113.875821">
+<system-out><![CDATA[Given I login to Application................................................passed
+And I click on "Login.SignIn"...............................................passed
+Then I verify "Common.LandingPage"..........................................passed
+When I click on "Common.Orders".............................................passed
+And I wait for "5" seconds..................................................passed
+And I verify "Orders.OrderSearchPage".......................................passed
+And I click on "Orders.OrderNumberCreated"..................................passed
+And I wait till "Common.Loading" is "Invisible".............................passed
+And I verify "Orders.CustomerInputBox"......................................passed
+And I wait for "3" seconds..................................................passed
+And I click on "Copy:Common.Button".........................................passed
+And I wait till "Common.Loading" is "Invisible".............................passed
+And I verify "Orders.CopyMessageBox"........................................passed
+And I wait for "5" seconds..................................................passed
+And I click on "Orders.OrderCopiedBtnOK"....................................passed
+And I wait till "Common.Loading" is "Invisible".............................passed
+And I verify "Account Warning Message::Orders.PromptBoxText"................passed
+And I click on "Common.WarningMsgOk"........................................passed
+And I wait for "5" seconds..................................................passed
+And I click on "Save & Close:Common.Button".................................passed
+And I wait for "5" seconds..................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Orders Features Test Cases" name="Open an Order and Export it to an Estimate" time="110.875831">
+<system-out><![CDATA[Given I login to Application................................................passed
+And I click on "Login.SignIn"...............................................passed
+Then I verify "Common.LandingPage"..........................................passed
+When I click on "Common.Orders".............................................passed
+And I wait for "5" seconds..................................................passed
+And I verify "Orders.OrderSearchPage".......................................passed
+And I click on "Orders.OrderNumberCreated"..................................passed
+And I wait till "Common.Loading" is "Invisible".............................passed
+And I verify "Orders.CustomerInputBox"......................................passed
+And I wait for "3" seconds..................................................passed
+Then I click on "Details:Common.HeaderTabs".................................passed
+And I click on "Estimate Export:Orders.ExportToEstimateButton"..............passed
+And I wait till "Common.Loading" is "Invisible".............................passed
+And I verify "Orders.ExportedToEstimateSuccessfullyMsg".....................passed
+And I wait for "5" seconds..................................................passed
+And I click on "Orders.ExportedToEsitmateOKBtn".............................passed
+And I wait for "5" seconds..................................................passed
+And I verify "Account Warning Message::Estimates.PromptBoxText".............passed
+And I click on "Common.WarningMsgOk"........................................passed
+And I wait for "5" seconds..................................................passed
+And I click on "Save & Close:Common.Button".................................passed
+And I click on "Common.Orders"..............................................passed
+And I wait for "5" seconds..................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Orders Features Test Cases" name="Open an Order and Delete it" time="73.043071">
+<system-out><![CDATA[Given I login to Application................................................passed
+And I click on "Login.SignIn"...............................................passed
+Then I verify "Common.LandingPage"..........................................passed
+When I click on "Common.Orders".............................................passed
+And I wait for "5" seconds..................................................passed
+And I verify "Orders.OrderSearchPage".......................................passed
+And I click on "Orders.OrderNumberCreated"..................................passed
+And I wait till "Common.Loading" is "Invisible".............................passed
+And I verify "Orders.CustomerInputBox"......................................passed
+And I wait for "2" seconds..................................................passed
+And I click on "Delete:Common.Button".......................................passed
+And I wait for "2" seconds..................................................passed
+And I accept Alert..........................................................passed
+And I wait till "Common.Loading" is "Invisible".............................passed
+Then I verify "Orders.OrderSearchPage"......................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Orders Features Test Cases" name="Open an Order and Update the expected Qty - &quot;Yes&quot;" time="72.663171">
+<system-out><![CDATA[Given I login to Application................................................passed
+And I click on "Login.SignIn"...............................................passed
+Then I verify "Common.LandingPage"..........................................passed
+When I click on "Common.Orders".............................................passed
+And I wait for "5" seconds..................................................passed
+And I verify "Orders.OrderSearchPage".......................................passed
+And I click on "Orders.OrderNumberCreated"..................................passed
+And I wait till "Common.Loading" is "Invisible".............................passed
+And I verify "Orders.CustomerInputBox"......................................passed
+And I wait for "3" seconds..................................................passed
+And I enter "15890" in "Common.UpdateQtyField"..............................passed
+And I click on "Update:Common.Button".......................................passed
+And I wait for "3" seconds..................................................passed
+And I verified "Common.UpdateQtyPopup"......................................passed
+And I verify "Do you want to recalculate unit prices? Pressing Yes or No will save changes to estimate.:Common.UpdateQtyPopupMessage".passed
+And I click on "Common.QtyUpdatePopupYesButton".............................passed
+And I wait for "3" seconds..................................................passed
+Then I check default content switch.........................................passed
+And I click on "Save & Close:Common.Button".................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Orders Features Test Cases" name="Open an Order and Update the expected Qty - &quot;No&quot;" time="75.987132">
+<system-out><![CDATA[Given I login to Application................................................passed
+And I click on "Login.SignIn"...............................................passed
+Then I verify "Common.LandingPage"..........................................passed
+When I click on "Common.Orders".............................................passed
+And I wait for "5" seconds..................................................passed
+And I verify "Orders.OrderSearchPage".......................................passed
+And I click on "Orders.OrderNumberCreated"..................................passed
+And I wait till "Common.Loading" is "Invisible".............................passed
+And I verify "Orders.CustomerInputBox"......................................passed
+And I wait for "3" seconds..................................................passed
+And I enter "4450" in "Common.UpdateQtyField"...............................passed
+And I click on "Update:Common.Button".......................................passed
+And I wait for "3" seconds..................................................passed
+And I verified "Common.UpdateQtyPopup"......................................passed
+And I verify "Do you want to recalculate unit prices? Pressing Yes or No will save changes to estimate.:Common.UpdateQtyPopupMessage".passed
+And I click on "Common.QtyUpdatePopupNoButton"..............................passed
+And I wait for "3" seconds..................................................passed
+Then I check default content switch.........................................passed
+And I click on "Save & Close:Common.Button".................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Orders Features Test Cases" name="Open an Order and Edit Services Description, Quantity in department tabs" time="104.588148">
+<system-out><![CDATA[Given I login to Application................................................passed
+And I click on "Login.SignIn"...............................................passed
+Then I verify "Common.LandingPage"..........................................passed
+When I click on "Common.Orders".............................................passed
+And I wait for "5" seconds..................................................passed
+And I verify "Orders.OrderSearchPage".......................................passed
+And I click on "Orders.OrderNumberCreated"..................................passed
+And I wait till "Common.Loading" is "Invisible".............................passed
+And I verify "Orders.CustomerInputBox"......................................passed
+And I wait for "3" seconds..................................................passed
+Then I click on "Data:Common.DepartmentMenu"................................passed
+And I wait till "Common.Loading" is "Invisible".............................passed
+And I enter "/Data Services - c21 Customizable Sell Sheet  -" in "0:Orders.ServiceDescriptionEditBox".passed
+And I click on "Save:Common.Button".........................................passed
+And I wait till "Common.Loading" is "Invisible".............................passed
+And I clear the text "0:Orders.QuantityTextBox".............................passed
+And I wait for "1" seconds..................................................passed
+And I enter "988.321" in "0:Orders.QuantityTextBox".........................passed
+And I wait for "1" seconds..................................................passed
+And I click on "0:Orders.UnitPriceTextBox"..................................passed
+And I verify "Keep existing Unit Price?:Orders.UnitPricePopUp"..............passed
+And I wait for "1" seconds..................................................passed
+And I click on "Common.UnitPriceUpdateNoBtn"................................passed
+And I wait for "1" seconds..................................................passed
+And I click on "Save & Close:Common.Button".................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Estimates Taxes Test Cases" name="Create Customer For Using it throughout" time="54.675146">
+<system-out><![CDATA[Given I login to Application................................................passed
+And I click on "Login.SignIn"...............................................passed
+Then I verify "Common.LandingPage"..........................................passed
+When I click on "Common.CRM"................................................passed
+Then I verify "CRM.CRMSerachLabel"..........................................passed
+And I click on "CRM.NewCustomerBtn".........................................passed
+And I verify "CRM.CustomerLabel"............................................passed
+And I enter "RandomNumber" in "Customer Code:Common.InputField".............passed
+And I enter "Jean Claude" in "Customer Name:Common.InputField" then store as "CustomerName".passed
+And I enter "23st Malay Street" in "Address 1:Common.InputField"............passed
+And I enter "Richmond Avenue" in "Address 2:Common.InputField"..............passed
+And I enter "Fairfield" in "Address 3:Common.InputField"....................passed
+And I enter "Boston" in "City:Common.InputField"............................passed
+And I enter "VA" in "ST/Prov:Common.InputField".............................passed
+And I enter "96300" in "Zip/Postal:Common.InputField".......................passed
+And I enter "JC@redrass.com" in "Email:Common.InputField"...................passed
+And I click on "CRM.AccountWarningMessage"..................................passed
+And I click on "CRM.TaxableCheckBox"........................................passed
+Then I clear the text "CRM.TaxJurisdictionComboBox".........................passed
+And I enter "ARKANSAS" in "CRM.TaxJurisdictionComboBox".....................passed
+And I click on "Save & Close:Common.Button".................................passed
+Then I verify "CRM.CRMSerachLabel"..........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Estimates Taxes Test Cases" name="" time="121.233365">
+<system-out><![CDATA[Given I login to Application................................................passed
+And I click on "Login.SignIn"...............................................passed
+Then I verify "Common.LandingPage"..........................................passed
+When I click on "Common.Estimates"..........................................passed
+And I verify "New Estimate:Common.Button"...................................passed
+And I click on "New Estimate:Common.Button".................................passed
+And I verify "Estimates.CustomerInputBox"...................................passed
+And I enter "DataMap-CustomerName" in "Estimates.CustomerInputBox"..........passed
+And I click on "DataMap-CustomerName:Common.DropDownOption_td"..............passed
+And I wait till "Common.Loading" is "Invisible".............................passed
+And I verify "Account Warning Message::Estimates.PromptBoxText".............passed
+And I click on "Common.WarningMsgOk"........................................passed
+And I clear the text "Sales Rep:Common.InputField_s"........................passed
+And I enter "Brian Moore" in "Sales Rep:Common.InputField_s"................passed
+And I click on "Sales Rep:Common.InputField_s"..............................passed
+And I clear the text "CSR:Common.InputField_s"..............................passed
+And I enter "Chris Huber" in "CSR:Common.InputField_s"......................passed
+And I click on "CSR:Common.InputField_s"....................................passed
+And I clear the text "Company:Common.InputField_s"..........................passed
+And I enter "Midnight Printing" in "Company:Common.InputField_s"............passed
+And I click on "Company:Common.InputField_s"................................passed
+And I enter "***Customer and service both are taxble***" in "Project:Common.InputField" then store as "Estimate".passed
+And I enter "1250" in "Expected Qty:Common.InputField"......................passed
+Then I click on "Data:Common.DepartmentMenu"................................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I click on "0:Common.ServiceComboBox"...................................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I enter "CASS" in "0:Common.ServiceComboBox"............................passed
+And I wait for "2" seconds..................................................passed
+Then I click on "Common.DateDue"............................................passed
+And I wait for "2" seconds..................................................passed
+Then I click on "Save:Common.Button"........................................passed
+And I wait for "4" seconds..................................................passed
+Then checked "182.04" in "Total & Tax:Common.TotalAndTaxes".................passed
+And I click on "Save & Close:Common.Button".................................passed
+Then I verify "Estimates.EstimateSearchPage"................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Estimates Taxes Test Cases" name="" time="138.246289">
+<system-out><![CDATA[Given I login to Application................................................passed
+And I click on "Login.SignIn"...............................................passed
+Then I verify "Common.LandingPage"..........................................passed
+When I click on "Common.Estimates"..........................................passed
+And I verify "New Estimate:Common.Button"...................................passed
+And I click on "New Estimate:Common.Button".................................passed
+And I verify "Estimates.CustomerInputBox"...................................passed
+And I enter "DataMap-CustomerName" in "Estimates.CustomerInputBox"..........passed
+And I click on "DataMap-CustomerName:Common.DropDownOption_td"..............passed
+And I wait till "Common.Loading" is "Invisible".............................passed
+And I verify "Account Warning Message::Estimates.PromptBoxText".............passed
+And I click on "Common.WarningMsgOk"........................................passed
+And I clear the text "Sales Rep:Common.InputField_s"........................passed
+And I enter "Brian Moore" in "Sales Rep:Common.InputField_s"................passed
+And I click on "Sales Rep:Common.InputField_s"..............................passed
+And I clear the text "CSR:Common.InputField_s"..............................passed
+And I enter "Chris Huber" in "CSR:Common.InputField_s"......................passed
+And I click on "CSR:Common.InputField_s"....................................passed
+And I clear the text "Company:Common.InputField_s"..........................passed
+And I enter "Midnight Printing" in "Company:Common.InputField_s"............passed
+And I click on "Company:Common.InputField_s"................................passed
+And I enter "***Customer and wizard service both are taxble***" in "Project:Common.InputField" then store as "Estimate".passed
+And I enter "4850" in "Expected Qty:Common.InputField"......................passed
+Then I click on "Data:Common.DepartmentMenu"................................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I click on "0:Common.ServiceComboBox"...................................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I enter "Address Setup 0" in "0:Common.ServiceComboBox".................passed
+And I wait for "5" seconds..................................................passed
+And I click on "0:Common.ServiceDescriptionEditBox".........................passed
+And I verified "Common.WizardServicePopup"..................................passed
+And I verify "Hand Match Perfect:Common.WizardServicePopupMessage"..........passed
+And I click on "0:Common.WizardSuccessorSelected"...........................passed
+And I wait for "3" seconds..................................................passed
+Then I check default content switch.........................................passed
+And I wait for "2" seconds..................................................passed
+Then I click on "Common.DateDue"............................................passed
+And I wait for "2" seconds..................................................passed
+Then I click on "Save:Common.Button"........................................passed
+And I wait for "4" seconds..................................................passed
+And checked "323.74" in "Total & Tax:Common.TotalAndTaxes"..................passed
+And I click on "Save & Close:Common.Button".................................passed
+Then I verify "Estimates.EstimateSearchPage"................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Estimates Taxes Test Cases" name="Customer Taxable and Service No Launch Non Taxable." time="156.947058">
+<system-out><![CDATA[Given I login to Application................................................passed
+And I click on "Login.SignIn"...............................................passed
+Then I verify "Common.LandingPage"..........................................passed
+When I click on "Common.Estimates"..........................................passed
+And I verify "New Estimate:Common.Button"...................................passed
+And I click on "New Estimate:Common.Button".................................passed
+And I verify "Estimates.CustomerInputBox"...................................passed
+And I enter "DataMap-CustomerName" in "Estimates.CustomerInputBox"..........passed
+And I click on "DataMap-CustomerName:Common.DropDownOption_td"..............passed
+And I wait till "Common.Loading" is "Invisible".............................passed
+And I verify "Account Warning Message::Estimates.PromptBoxText".............passed
+And I click on "Common.WarningMsgOk"........................................passed
+And I clear the text "Sales Rep:Common.InputField_s"........................passed
+And I enter "Brian Moore" in "Sales Rep:Common.InputField_s"................passed
+And I click on "Sales Rep:Common.InputField_s"..............................passed
+And I clear the text "CSR:Common.InputField_s"..............................passed
+And I enter "Chris Huber" in "CSR:Common.InputField_s"......................passed
+And I click on "CSR:Common.InputField_s"....................................passed
+And I clear the text "Company:Common.InputField_s"..........................passed
+And I enter "Midnight Printing" in "Company:Common.InputField_s"............passed
+And I click on "Company:Common.InputField_s"................................passed
+And I enter "***Customer taxable and no launch service non taxable***" in "Project:Common.InputField" then store as "Estimate".passed
+And I enter "3200" in "Expected Qty:Common.InputField"......................passed
+Then I click on "Data:Common.DepartmentMenu"................................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I click on "0:Common.ServiceComboBox"...................................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I enter "CASS" in "0:Common.ServiceComboBox"............................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+Then I click on "Common.DateDue"............................................passed
+Then I click on "0:Estimates.ServiceInfoDetailsButton"......................passed
+When I verified "Common.ServiceInfoPage"....................................passed
+When I verify "Service Information:Common.ServiceInfoLabel".................passed
+And I click on "Common.ServiceInfoTaxableCheckbox"..........................passed
+And I wait for "2" seconds..................................................passed
+Then I click on "Common.ServiceInfoPageSaveandClose"........................passed
+And I wait for "1" seconds..................................................passed
+Then I check default content switch.........................................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+Then I click on "Save:Common.Button"........................................passed
+And I wait for "4" seconds..................................................passed
+Then checked "150.00" in "Total & Tax:Common.TotalAndTaxes".................passed
+And I click on "Save & Close:Common.Button".................................passed
+Then I verify "Estimates.EstimateSearchPage"................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Estimates Taxes Test Cases" name="Customer Taxable and Service Wizard Non Taxable." time="150.648763">
+<system-out><![CDATA[Given I login to Application................................................passed
+And I click on "Login.SignIn"...............................................passed
+Then I verify "Common.LandingPage"..........................................passed
+When I click on "Common.Estimates"..........................................passed
+And I wait for "5" seconds..................................................passed
+And I verify "Estimates.EstimateSearchPage".................................passed
+And I click on "Common.ClearFilters"........................................passed
+And I wait for "5" seconds..................................................passed
+And I click on "Estimates.EstimateNumberCreated"............................passed
+And I wait till "Common.Loading" is "Invisible".............................passed
+And I verify "Estimates.CustomerInputBox"...................................passed
+And I wait for "3" seconds..................................................passed
+Then I click on "Data:Common.DepartmentMenu"................................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I click on "1:Common.ServiceComboBox"...................................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I enter "Address Setup 0" in "1:Common.ServiceComboBox".................passed
+And I wait for "5" seconds..................................................passed
+And I click on "1:Common.ServiceDescriptionEditBox".........................passed
+And I verified "Common.WizardServicePopup"..................................passed
+And I verify "Hand Match Perfect:Common.WizardServicePopupMessage"..........passed
+And I click on "0:Common.WizardSuccessorSelected"...........................passed
+And I wait for "3" seconds..................................................passed
+Then I check default content switch.........................................passed
+Then I click on "1:Estimates.ServiceInfoDetailsButton"......................passed
+When I verified "Common.ServiceInfoPage"....................................passed
+When I verify "Service Information:Common.ServiceInfoLabel".................passed
+And I click on "Common.ServiceInfoTaxableCheckbox"..........................passed
+And I wait for "2" seconds..................................................passed
+Then I click on "Common.ServiceInfoPageSaveandClose"........................passed
+And I wait for "1" seconds..................................................passed
+Then I check default content switch.........................................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+Then I click on "Save:Common.Button"........................................passed
+And I wait for "4" seconds..................................................passed
+Then checked "326.00" in "Total & Tax:Common.TotalAndTaxes".................passed
+And I click on "Save & Close:Common.Button".................................passed
+Then I verify "Estimates.EstimateSearchPage"................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Estimates Taxes Test Cases" name="Customer Non Taxable and Services Taxable" time="221.065032">
+<system-out><![CDATA[Given I login to Application................................................passed
+And I click on "Login.SignIn"...............................................passed
+Then I verify "Common.LandingPage"..........................................passed
+When I click on "Common.Estimates"..........................................passed
+And I verify "New Estimate:Common.Button"...................................passed
+And I click on "New Estimate:Common.Button".................................passed
+And I verify "Estimates.CustomerInputBox"...................................passed
+And I enter "Action Mailing" in "Estimates.CustomerInputBox"................passed
+And I click on "Action Mailing:Common.DropDownOption_td"....................passed
+And I wait till "Common.Loading" is "Invisible".............................passed
+And I verify "Account Warning Message::Estimates.PromptBoxText".............passed
+And I click on "Common.WarningMsgOk"........................................passed
+And I clear the text "Sales Rep:Common.InputField_s"........................passed
+And I enter "Brian Moore" in "Sales Rep:Common.InputField_s"................passed
+And I click on "Sales Rep:Common.InputField_s"..............................passed
+And I clear the text "CSR:Common.InputField_s"..............................passed
+And I enter "Chris Huber" in "CSR:Common.InputField_s"......................passed
+And I click on "CSR:Common.InputField_s"....................................passed
+And I clear the text "Company:Common.InputField_s"..........................passed
+And I enter "Midnight Printing" in "Company:Common.InputField_s"............passed
+And I click on "Company:Common.InputField_s"................................passed
+And I enter "***Customer non taxable and services taxable***" in "Project:Common.InputField".passed
+Then I click on "Common.TaxableCheckBox"....................................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I enter "14250" in "Expected Qty:Common.InputField".....................passed
+Then I click on "Data:Common.DepartmentMenu"................................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I click on "0:Common.ServiceComboBox"...................................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I enter "CASS" in "0:Common.ServiceComboBox"............................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+Then I click on "Common.DateDue"............................................passed
+Then I click on "0:Estimates.ServiceInfoDetailsButton"......................passed
+When I verified "Common.ServiceInfoPage"....................................passed
+When I verify "Service Information:Common.ServiceInfoLabel".................passed
+And I wait for "2" seconds..................................................passed
+Then I click on "Common.ServiceInfoPageSaveandClose"........................passed
+And I wait for "1" seconds..................................................passed
+Then I check default content switch.........................................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I click on "1:Common.ServiceComboBox"...................................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I enter "Address Setup 0" in "1:Common.ServiceComboBox".................passed
+And I wait for "5" seconds..................................................passed
+And I click on "1:Common.ServiceDescriptionEditBox".........................passed
+And I verified "Common.WizardServicePopup"..................................passed
+And I verify "Hand Match Perfect:Common.WizardServicePopupMessage"..........passed
+And I click on "0:Common.WizardSuccessorSelected"...........................passed
+And I wait for "3" seconds..................................................passed
+Then I check default content switch.........................................passed
+Then I click on "1:Estimates.ServiceInfoDetailsButton"......................passed
+When I verified "Common.ServiceInfoPage"....................................passed
+When I verify "Service Information:Common.ServiceInfoLabel".................passed
+Then I click on "Common.ServiceInfoPageSaveandClose"........................passed
+And I wait for "1" seconds..................................................passed
+Then I check default content switch.........................................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+Then I click on "Save:Common.Button"........................................passed
+And I wait for "2" seconds..................................................passed
+Then checked "997.50" in "Total & Tax:Common.TotalAndTaxes".................passed
+And I click on "Save & Close:Common.Button".................................passed
+Then I verify "Estimates.EstimateSearchPage"................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Estimates Taxes Test Cases" name="Customer and Services SWF Taxable." time="173.659096">
+<system-out><![CDATA[Given I login to Application................................................passed
+And I click on "Login.SignIn"...............................................passed
+Then I verify "Common.LandingPage"..........................................passed
+When I click on "Common.Estimates"..........................................passed
+And I verify "New Estimate:Common.Button"...................................passed
+And I click on "New Estimate:Common.Button".................................passed
+And I verify "Estimates.CustomerInputBox"...................................passed
+And I enter "Action Mailing" in "Estimates.CustomerInputBox"................passed
+And I click on "Action Mailing:Common.DropDownOption_td"....................passed
+And I wait till "Common.Loading" is "Invisible".............................passed
+And I verify "Account Warning Message::Estimates.PromptBoxText".............passed
+And I click on "Common.WarningMsgOk"........................................passed
+And I clear the text "Sales Rep:Common.InputField_s"........................passed
+And I enter "Brian Moore" in "Sales Rep:Common.InputField_s"................passed
+And I click on "Sales Rep:Common.InputField_s"..............................passed
+And I clear the text "CSR:Common.InputField_s"..............................passed
+And I enter "Chris Huber" in "CSR:Common.InputField_s"......................passed
+And I click on "CSR:Common.InputField_s"....................................passed
+And I clear the text "Company:Common.InputField_s"..........................passed
+And I enter "Midnight Printing" in "Company:Common.InputField_s"............passed
+And I click on "Company:Common.InputField_s"................................passed
+And I enter "***Customer taxable and SWF services taxable***" in "Project:Common.InputField".passed
+And I enter "16800" in "Expected Qty:Common.InputField".....................passed
+Then I click on "Wide Format:Common.DepartmentMenu".........................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I click on "0:Common.ServiceComboBox"...................................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I enter "_Yard Sign" in "0:Common.ServiceComboBox"......................passed
+And I wait for "5" seconds..................................................passed
+And I click on "0:Common.ServiceDescriptionEditBox".........................passed
+And I verified "Common.WideFormatCalculator"................................passed
+And I verify "Wide Format Estimate:Common.WideFormatEstimate"...............passed
+And I click on "wfEstimateProductType:Common.SWFComboBox"...................passed
+And I enter "18 x 24 Yard Sign" in "wfEstimateProductType:Common.SWFComboBox".passed
+And I wait for "5" seconds..................................................passed
+And I click on "wideFormatStockId:Common.SWFComboBox".......................passed
+And I enter "Canvas60" in "wideFormatStockId:Common.SWFComboBox"............passed
+And I wait for "5" seconds..................................................passed
+And I click on "Common.WFMessageEditor".....................................passed
+And I enter "Automation Script-Adding comments for simple wide format" in "Common.WFMessageEditor".passed
+And I click on "Save:Common.Button".........................................passed
+And I wait for "5" seconds..................................................passed
+And I click on "Save & Close:Common.Button".................................passed
+And I wait for "3" seconds..................................................passed
+Then I check default content switch.........................................passed
+And I wait for "1" seconds..................................................passed
+Then I click on "0:Estimates.ServiceInfoDetailsButton"......................passed
+When I verified "Common.ServiceInfoPage"....................................passed
+When I verify "Service Information:Common.ServiceInfoLabel".................passed
+Then I click on "Common.ServiceInfoPageSaveandClose"........................passed
+And I wait for "1" seconds..................................................passed
+Then I check default content switch.........................................passed
+Then I click on "Save:Common.Button"........................................passed
+And I wait for "1" seconds..................................................passed
+Then checked "221356.80" in "Total & Tax:Common.TotalAndTaxes"..............passed
+And I click on "Save & Close:Common.Button".................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Estimates Taxes Test Cases" name="Customer and Services AWF Taxable." time="156.911458">
+<system-out><![CDATA[Given I login to Application................................................passed
+And I click on "Login.SignIn"...............................................passed
+Then I verify "Common.LandingPage"..........................................passed
+When I click on "Common.Estimates"..........................................passed
+And I verify "New Estimate:Common.Button"...................................passed
+And I click on "New Estimate:Common.Button".................................passed
+And I verify "Estimates.CustomerInputBox"...................................passed
+And I enter "Action Mailing" in "Estimates.CustomerInputBox"................passed
+And I click on "Action Mailing:Common.DropDownOption_td"....................passed
+And I wait till "Common.Loading" is "Invisible".............................passed
+And I verify "Account Warning Message::Estimates.PromptBoxText".............passed
+And I click on "Common.WarningMsgOk"........................................passed
+And I clear the text "Sales Rep:Common.InputField_s"........................passed
+And I enter "Brian Moore" in "Sales Rep:Common.InputField_s"................passed
+And I click on "Sales Rep:Common.InputField_s"..............................passed
+And I clear the text "CSR:Common.InputField_s"..............................passed
+And I enter "Chris Huber" in "CSR:Common.InputField_s"......................passed
+And I click on "CSR:Common.InputField_s"....................................passed
+And I clear the text "Company:Common.InputField_s"..........................passed
+And I enter "Midnight Printing" in "Company:Common.InputField_s"............passed
+And I click on "Company:Common.InputField_s"................................passed
+And I enter "***Customer taxable and AWF services taxable***" in "Project:Common.InputField".passed
+And I enter "1680" in "Expected Qty:Common.InputField"......................passed
+Then I click on "Wide Format:Common.DepartmentMenu".........................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I click on "0:Common.ServiceComboBox"...................................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I enter "_Banner" in "0:Common.ServiceComboBox".........................passed
+And I wait for "2" seconds..................................................passed
+And I click on "0:Common.ServiceDescriptionEditBox".........................passed
+And I verified "Common.WideFormatCalculator"................................passed
+And I wait for "5" seconds..................................................passed
+And I click on "Common.AWFTemplateName".....................................passed
+And I clear the text "Common.AWFTemplateName"...............................passed
+And I wait for "3" seconds..................................................passed
+And I enter "Vehicle Wrap" in "Common.AWFTemplateName"......................passed
+And I click on "Common.Description".........................................passed
+And I click on "Common.CalculateButton".....................................passed
+And I wait for "5" seconds..................................................passed
+And I click on "Save & Close:Common.Button".................................passed
+And I wait for "2" seconds..................................................passed
+Then I check default content switch.........................................passed
+And I wait for "1" seconds..................................................passed
+Then I click on "0:Estimates.ServiceInfoDetailsButton"......................passed
+When I verified "Common.ServiceInfoPage"....................................passed
+When I verify "Service Information:Common.ServiceInfoLabel".................passed
+Then I click on "Common.ServiceInfoPageSaveandClose"........................passed
+And I wait for "1" seconds..................................................passed
+Then I check default content switch.........................................passed
+Then I click on "Save:Common.Button"........................................passed
+And I wait for "1" seconds..................................................passed
+Then checked "2449.23" in "Total & Tax:Common.TotalAndTaxes"................passed
+And I click on "Save & Close:Common.Button".................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Estimates Taxes Test Cases" name="Open an Estimate and add Print Calculator" time="216.392597">
+<system-out><![CDATA[Given I login to Application................................................passed
+And I click on "Login.SignIn"...............................................passed
+Then I verify "Common.LandingPage"..........................................passed
+When I click on "Common.Estimates"..........................................passed
+And I verify "New Estimate:Common.Button"...................................passed
+And I click on "New Estimate:Common.Button".................................passed
+And I verify "Estimates.CustomerInputBox"...................................passed
+And I enter "Action Mailing" in "Estimates.CustomerInputBox"................passed
+And I click on "Action Mailing:Common.DropDownOption_td"....................passed
+And I wait till "Common.Loading" is "Invisible".............................passed
+And I verify "Account Warning Message::Estimates.PromptBoxText".............passed
+And I click on "Common.WarningMsgOk"........................................passed
+And I clear the text "Sales Rep:Common.InputField_s"........................passed
+And I enter "Brian Moore" in "Sales Rep:Common.InputField_s"................passed
+And I click on "Sales Rep:Common.InputField_s"..............................passed
+And I clear the text "CSR:Common.InputField_s"..............................passed
+And I enter "Chris Huber" in "CSR:Common.InputField_s"......................passed
+And I click on "CSR:Common.InputField_s"....................................passed
+And I clear the text "Company:Common.InputField_s"..........................passed
+And I enter "Midnight Printing" in "Company:Common.InputField_s"............passed
+And I click on "Company:Common.InputField_s"................................passed
+And I enter "***Customer taxable and PC services taxable***" in "Project:Common.InputField".passed
+Then I click on "Common.TaxableCheckBox"....................................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I enter "9850" in "Expected Qty:Common.InputField"......................passed
+Then I click on "Print:Common.DepartmentMenu"...............................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I click on "0:Common.ServiceComboBox"...................................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I enter ".PS" in "0:Common.ServiceComboBox".............................passed
+And I wait for "2" seconds..................................................passed
+And I click on "0:Common.ServiceDescriptionEditBox".........................passed
+Then I check "Common.PrintCalculator".......................................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I click on "Common.PCTemplateName"......................................passed
+And I clear the text "Common.PCTemplateName"................................passed
+And I wait for "3" seconds..................................................passed
+And I enter "52" in "Common.PCTemplateName".................................passed
+And I wait for "10" seconds.................................................passed
+And I click on "Common.PrintCalculateButton"................................passed
+And I wait for "10" seconds.................................................passed
+And I click on "Common.PrintCalculateButton"................................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I click on "Common.PrintSubmitButton"...................................passed
+And I wait for "3" seconds..................................................passed
+Then I check default content switch.........................................passed
+And I wait for "1" seconds..................................................passed
+Then I click on "0:Estimates.ServiceInfoDetailsButton"......................passed
+When I verified "Common.ServiceInfoPage"....................................passed
+When I verify "Service Information:Common.ServiceInfoLabel".................passed
+Then I click on "Common.ServiceInfoPageSaveandClose"........................passed
+And I wait for "1" seconds..................................................passed
+Then I check default content switch.........................................passed
+Then I click on "Save:Common.Button"........................................passed
+And I wait for "1" seconds..................................................passed
+Then checked "8170.96" in "Total & Tax:Common.TotalAndTaxes"................passed
+And I click on "Save & Close:Common.Button".................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Estimates Taxes Test Cases" name="Customer Non Taxable and Services AWF Taxable." time="172.22261">
+<system-out><![CDATA[Given I login to Application................................................passed
+And I click on "Login.SignIn"...............................................passed
+Then I verify "Common.LandingPage"..........................................passed
+When I click on "Common.Estimates"..........................................passed
+And I verify "New Estimate:Common.Button"...................................passed
+And I click on "New Estimate:Common.Button".................................passed
+And I verify "Estimates.CustomerInputBox"...................................passed
+And I enter "Action Mailing" in "Estimates.CustomerInputBox"................passed
+And I click on "Action Mailing:Common.DropDownOption_td"....................passed
+And I wait till "Common.Loading" is "Invisible".............................passed
+And I verify "Account Warning Message::Estimates.PromptBoxText".............passed
+And I click on "Common.WarningMsgOk"........................................passed
+And I clear the text "Sales Rep:Common.InputField_s"........................passed
+And I enter "Brian Moore" in "Sales Rep:Common.InputField_s"................passed
+And I click on "Sales Rep:Common.InputField_s"..............................passed
+And I clear the text "CSR:Common.InputField_s"..............................passed
+And I enter "Chris Huber" in "CSR:Common.InputField_s"......................passed
+And I click on "CSR:Common.InputField_s"....................................passed
+And I clear the text "Company:Common.InputField_s"..........................passed
+And I enter "Midnight Printing" in "Company:Common.InputField_s"............passed
+And I click on "Company:Common.InputField_s"................................passed
+And I enter "***Customer non taxable and AWF services taxable***" in "Project:Common.InputField".passed
+Then I click on "Common.TaxableCheckBox"....................................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I enter "9856" in "Expected Qty:Common.InputField"......................passed
+Then I click on "Wide Format:Common.DepartmentMenu".........................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I click on "0:Common.ServiceComboBox"...................................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I enter "_Banner" in "0:Common.ServiceComboBox".........................passed
+And I wait for "2" seconds..................................................passed
+And I click on "0:Common.ServiceDescriptionEditBox".........................passed
+And I verified "Common.WideFormatCalculator"................................passed
+And I wait for "5" seconds..................................................passed
+And I click on "Common.AWFTemplateName".....................................passed
+And I clear the text "Common.AWFTemplateName"...............................passed
+And I wait for "3" seconds..................................................passed
+And I enter "Vehicle Wrap" in "Common.AWFTemplateName"......................passed
+And I click on "Common.Description".........................................passed
+And I click on "Common.CalculateButton".....................................passed
+And I wait for "5" seconds..................................................passed
+And I click on "Save & Close:Common.Button".................................passed
+And I wait for "2" seconds..................................................passed
+Then I check default content switch.........................................passed
+And I wait for "1" seconds..................................................passed
+Then I click on "0:Estimates.ServiceInfoDetailsButton"......................passed
+When I verified "Common.ServiceInfoPage"....................................passed
+When I verify "Service Information:Common.ServiceInfoLabel".................passed
+Then I click on "Common.ServiceInfoPageSaveandClose"........................passed
+And I wait for "1" seconds..................................................passed
+Then I check default content switch.........................................passed
+Then I click on "Save:Common.Button"........................................passed
+And I wait for "1" seconds..................................................passed
+Then checked "13999.55" in "Total & Tax:Common.TotalAndTaxes"...............passed
+And I click on "Save & Close:Common.Button".................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Estimates Taxes Test Cases" name="Customer Non Taxable and Services SWF Taxable." time="198.593682">
+<system-out><![CDATA[Given I login to Application................................................passed
+And I click on "Login.SignIn"...............................................passed
+Then I verify "Common.LandingPage"..........................................passed
+When I click on "Common.Estimates"..........................................passed
+And I verify "New Estimate:Common.Button"...................................passed
+And I click on "New Estimate:Common.Button".................................passed
+And I verify "Estimates.CustomerInputBox"...................................passed
+And I enter "Action Mailing" in "Estimates.CustomerInputBox"................passed
+And I click on "Action Mailing:Common.DropDownOption_td"....................passed
+And I wait till "Common.Loading" is "Invisible".............................passed
+And I verify "Account Warning Message::Estimates.PromptBoxText".............passed
+And I click on "Common.WarningMsgOk"........................................passed
+And I clear the text "Sales Rep:Common.InputField_s"........................passed
+And I enter "Brian Moore" in "Sales Rep:Common.InputField_s"................passed
+And I click on "Sales Rep:Common.InputField_s"..............................passed
+And I clear the text "CSR:Common.InputField_s"..............................passed
+And I enter "Chris Huber" in "CSR:Common.InputField_s"......................passed
+And I click on "CSR:Common.InputField_s"....................................passed
+And I clear the text "Company:Common.InputField_s"..........................passed
+And I enter "Midnight Printing" in "Company:Common.InputField_s"............passed
+And I click on "Company:Common.InputField_s"................................passed
+And I enter "***Customer non taxable and SWF services taxable***" in "Project:Common.InputField".passed
+Then I click on "Common.TaxableCheckBox"....................................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I enter "12345" in "Expected Qty:Common.InputField".....................passed
+Then I click on "Wide Format:Common.DepartmentMenu".........................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I click on "0:Common.ServiceComboBox"...................................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I enter "_Yard Sign" in "0:Common.ServiceComboBox"......................passed
+And I wait for "5" seconds..................................................passed
+And I click on "0:Common.ServiceDescriptionEditBox".........................passed
+And I verified "Common.WideFormatCalculator"................................passed
+And I verify "Wide Format Estimate:Common.WideFormatEstimate"...............passed
+And I click on "wfEstimateProductType:Common.SWFComboBox"...................passed
+And I enter "18 x 24 Yard Sign" in "wfEstimateProductType:Common.SWFComboBox".passed
+And I wait for "5" seconds..................................................passed
+And I click on "wideFormatStockId:Common.SWFComboBox".......................passed
+And I enter "Canvas60" in "wideFormatStockId:Common.SWFComboBox"............passed
+And I wait for "5" seconds..................................................passed
+And I click on "Common.WFMessageEditor".....................................passed
+And I enter "Automation Script-Adding comments for simple wide format" in "Common.WFMessageEditor".passed
+And I click on "Save:Common.Button".........................................passed
+And I wait for "5" seconds..................................................passed
+And I click on "Save & Close:Common.Button".................................passed
+And I wait for "3" seconds..................................................passed
+Then I check default content switch.........................................passed
+And I wait for "1" seconds..................................................passed
+Then I click on "0:Estimates.ServiceInfoDetailsButton"......................passed
+When I verified "Common.ServiceInfoPage"....................................passed
+When I verify "Service Information:Common.ServiceInfoLabel".................passed
+Then I click on "Common.ServiceInfoPageSaveandClose"........................passed
+And I wait for "1" seconds..................................................passed
+Then I check default content switch.........................................passed
+Then I click on "Save:Common.Button"........................................passed
+And I wait for "1" seconds..................................................passed
+Then checked "162657.72" in "Total & Tax:Common.TotalAndTaxes"..............passed
+And I click on "Save & Close:Common.Button".................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Estimates Taxes Test Cases" name="Customer Non Taxable and Services/Wizard/AWF/PC Taxable." time="387.219733">
+<system-out><![CDATA[Given I login to Application................................................passed
+And I click on "Login.SignIn"...............................................passed
+Then I verify "Common.LandingPage"..........................................passed
+When I click on "Common.Estimates"..........................................passed
+And I verify "New Estimate:Common.Button"...................................passed
+And I click on "New Estimate:Common.Button".................................passed
+And I verify "Estimates.CustomerInputBox"...................................passed
+And I enter "Action Mailing" in "Estimates.CustomerInputBox"................passed
+And I click on "Action Mailing:Common.DropDownOption_td"....................passed
+And I wait till "Common.Loading" is "Invisible".............................passed
+And I verify "Account Warning Message::Estimates.PromptBoxText".............passed
+And I click on "Common.WarningMsgOk"........................................passed
+And I clear the text "Sales Rep:Common.InputField_s"........................passed
+And I enter "Brian Moore" in "Sales Rep:Common.InputField_s"................passed
+And I click on "Sales Rep:Common.InputField_s"..............................passed
+And I clear the text "CSR:Common.InputField_s"..............................passed
+And I enter "Chris Huber" in "CSR:Common.InputField_s"......................passed
+And I click on "CSR:Common.InputField_s"....................................passed
+And I clear the text "Company:Common.InputField_s"..........................passed
+And I enter "Midnight Printing" in "Company:Common.InputField_s"............passed
+And I click on "Company:Common.InputField_s"................................passed
+And I enter "***Customer non taxable and no launch,wizard,AWF,PC services taxable***" in "Project:Common.InputField".passed
+Then I click on "Common.TaxableCheckBox"....................................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I enter "51" in "Expected Qty:Common.InputField"........................passed
+Then I click on "Data:Common.DepartmentMenu"................................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I click on "0:Common.ServiceComboBox"...................................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I enter "CASS" in "0:Common.ServiceComboBox"............................passed
+Then I click on "Common.DateDue"............................................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I click on "1:Common.ServiceComboBox"...................................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I enter "Address Setup 0" in "1:Common.ServiceComboBox".................passed
+And I wait for "5" seconds..................................................passed
+And I click on "1:Common.ServiceDescriptionEditBox".........................passed
+And I verified "Common.WizardServicePopup"..................................passed
+And I verify "Hand Match Perfect:Common.WizardServicePopupMessage"..........passed
+And I click on "0:Common.WizardSuccessorSelected"...........................passed
+And I wait for "3" seconds..................................................passed
+Then I check default content switch.........................................passed
+And I wait for "2" seconds..................................................passed
+Then I click on "Wide Format:Common.DepartmentMenu".........................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I click on "0:Common.ServiceComboBox"...................................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I enter "_Banner" in "0:Common.ServiceComboBox".........................passed
+And I wait for "2" seconds..................................................passed
+And I click on "0:Common.ServiceDescriptionEditBox".........................passed
+And I verified "Common.WideFormatCalculator"................................passed
+And I wait for "5" seconds..................................................passed
+And I click on "Common.AWFTemplateName".....................................passed
+And I clear the text "Common.AWFTemplateName"...............................passed
+And I wait for "3" seconds..................................................passed
+And I enter "Daves Banner Job" in "Common.AWFTemplateName"..................passed
+And I click on "Common.Description".........................................passed
+And I click on "Common.CalculateButton".....................................passed
+And I wait for "5" seconds..................................................passed
+And I click on "Save & Close:Common.Button".................................passed
+And I wait for "2" seconds..................................................passed
+Then I check default content switch.........................................passed
+And I wait for "1" seconds..................................................passed
+Then I click on "Print:Common.DepartmentMenu"...............................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I click on "0:Common.ServiceComboBox"...................................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I enter ".PS" in "0:Common.ServiceComboBox".............................passed
+And I wait for "2" seconds..................................................passed
+And I click on "0:Common.ServiceDescriptionEditBox".........................passed
+Then I check "Common.PrintCalculator".......................................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I click on "Common.PCTemplateName"......................................passed
+And I clear the text "Common.PCTemplateName"................................passed
+And I wait for "3" seconds..................................................passed
+And I enter "52" in "Common.PCTemplateName".................................passed
+And I wait for "10" seconds.................................................passed
+And I click on "Common.PrintCalculateButton"................................passed
+And I wait for "10" seconds.................................................passed
+And I click on "Common.PrintCalculateButton"................................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+And I click on "Common.PrintSubmitButton"...................................passed
+And I wait for "3" seconds..................................................passed
+Then I check default content switch.........................................passed
+And I wait for "1" seconds..................................................passed
+Then I click on "Save:Common.Button"........................................passed
+And I wait for "1" seconds..................................................passed
+Then checked "961.81" in "Total & Tax:Common.TotalAndTaxes".................passed
+And I click on "Save & Close:Common.Button".................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Estimates Taxes Test Cases" name="Open an Estimate and make Customer Taxable and verify Services/Wizard/AWF/PC Taxable." time="76.693623">
+<system-out><![CDATA[Given I login to Application................................................passed
+And I click on "Login.SignIn"...............................................passed
+Then I verify "Common.LandingPage"..........................................passed
+When I click on "Common.Estimates"..........................................passed
+And I wait for "1" seconds..................................................passed
+And I verify "Estimates.EstimateSearchPage".................................passed
+And I click on "Common.ClearFilters"........................................passed
+And I wait for "1" seconds..................................................passed
+And I click on "Estimates.EstimateNumberCreated"............................passed
+And I wait till "Common.Loading" is "Invisible".............................passed
+And I verify "Estimates.CustomerInputBox"...................................passed
+And I wait for "2" seconds..................................................passed
+Then I click on "Common.TaxableCheckBox"....................................passed
+Then I wait till "Common.Loading" is "Invisible"............................passed
+Then I click on "Save:Common.Button"........................................passed
+And I wait for "1" seconds..................................................passed
+Then checked "980.72" in "Total & Tax:Common.TotalAndTaxes".................passed
+And I click on "Save & Close:Common.Button".................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Estimates Taxes Test Cases" name="Open an Estimate Update QTY in estimate with &quot;YES&quot; and verify new total and taxes." time="72.608308">
+<system-out><![CDATA[Given I login to Application................................................passed
+And I click on "Login.SignIn"...............................................passed
+Then I verify "Common.LandingPage"..........................................passed
+When I click on "Common.Estimates"..........................................passed
+And I wait for "1" seconds..................................................passed
+And I verify "Estimates.EstimateSearchPage".................................passed
+And I click on "Common.ClearFilters"........................................passed
+And I wait for "1" seconds..................................................passed
+And I click on "Estimates.EstimateNumberCreated"............................passed
+And I wait till "Common.Loading" is "Invisible".............................passed
+And I verify "Estimates.CustomerInputBox"...................................passed
+And I wait for "2" seconds..................................................passed
+And I enter "223" in "Common.UpdateQtyField"................................passed
+And I click on "Update:Common.Button".......................................passed
+And I wait for "2" seconds..................................................passed
+And I verified "Common.UpdateQtyPopup"......................................passed
+And I verify "Do you want to recalculate unit prices? Pressing Yes or No will save changes to estimate.:Common.UpdateQtyPopupMessage".passed
+And I click on "Common.QtyUpdatePopupYesButton".............................passed
+And I wait for "1" seconds..................................................passed
+Then I check default content switch.........................................passed
+Then I click on "Save:Common.Button"........................................passed
+And I wait for "1" seconds..................................................passed
+Then checked "3156.40" in "Total & Tax:Common.TotalAndTaxes"................passed
+And I click on "Save & Close:Common.Button".................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Estimates Taxes Test Cases" name="Open an Estimate Update QTY in estimate with &quot;NO&quot; and verify new total and taxes." time="75.417849">
+<system-out><![CDATA[Given I login to Application................................................passed
+And I click on "Login.SignIn"...............................................passed
+Then I verify "Common.LandingPage"..........................................passed
+When I click on "Common.Estimates"..........................................passed
+And I wait for "1" seconds..................................................passed
+And I verify "Estimates.EstimateSearchPage".................................passed
+And I click on "Common.ClearFilters"........................................passed
+And I wait for "1" seconds..................................................passed
+And I click on "Estimates.EstimateNumberCreated"............................passed
+And I wait till "Common.Loading" is "Invisible".............................passed
+And I verify "Estimates.CustomerInputBox"...................................passed
+And I wait for "2" seconds..................................................passed
+And I enter "999" in "Common.UpdateQtyField"................................passed
+And I click on "Update:Common.Button".......................................passed
+And I wait for "2" seconds..................................................passed
+And I verified "Common.UpdateQtyPopup"......................................passed
+And I verify "Do you want to recalculate unit prices? Pressing Yes or No will save changes to estimate.:Common.UpdateQtyPopupMessage".passed
+And I click on "Common.QtyUpdatePopupNoButton"..............................passed
+And I wait for "1" seconds..................................................passed
+Then I check default content switch.........................................passed
+Then I click on "Save:Common.Button"........................................passed
+And I wait for "1" seconds..................................................passed
+Then checked "14001.56" in "Total & Tax:Common.TotalAndTaxes"...............passed
+And I click on "Save & Close:Common.Button".................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Estimates Taxes Test Cases" name="Open an Estimate and export to Order and verify new total and taxes." time="111.395736">
+<system-out><![CDATA[Given I login to Application................................................passed
+And I click on "Login.SignIn"...............................................passed
+Then I verify "Common.LandingPage"..........................................passed
+When I click on "Common.Estimates"..........................................passed
+And I wait for "1" seconds..................................................passed
+And I verify "Estimates.EstimateSearchPage".................................passed
+And I click on "Common.ClearFilters"........................................passed
+And I wait for "1" seconds..................................................passed
+And I click on "Estimates.EstimateNumberCreated"............................passed
+And I wait till "Common.Loading" is "Invisible".............................passed
+And I verify "Estimates.CustomerInputBox"...................................passed
+And I wait for "2" seconds..................................................passed
+And I click on "Export to Order:Estimates.ExportToOrder"....................passed
+And I wait till "Common.Loading" is "Invisible".............................passed
+And I verify "Estimate Exported to Order Successfully:Orders.ExportedToOrderSuccessfullyMsg".passed
+And I wait for "2" seconds..................................................passed
+And I click on "Orders.ExportedToOrderOKBtn"................................passed
+And I wait for "2" seconds..................................................passed
+And I verify "Orders.AccountWarningMsg".....................................passed
+And I click on "Orders.WarningMsgOk"........................................passed
+And I wait for "2" seconds..................................................passed
+Then I click on "Save:Common.Button"........................................passed
+And I wait for "1" seconds..................................................passed
+Then checked "14,001.56" in "Total & Tax:Common.TotalAndTaxes"..............passed
+And I click on "Save & Close:Common.Button".................................passed
+And I click on "Common.Estimates"...........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Estimates Taxes Test Cases" name="Open an Estimate create an &quot;MQ&quot; and export to Order and verify new total and taxes." time="127.466938">
+<system-out><![CDATA[Given I login to Application................................................passed
+And I click on "Login.SignIn"...............................................passed
+Then I verify "Common.LandingPage"..........................................passed
+When I click on "Common.Estimates"..........................................passed
+And I wait for "1" seconds..................................................passed
+And I verify "Estimates.EstimateSearchPage".................................passed
+And I click on "Common.ClearFilters"........................................passed
+And I wait for "1" seconds..................................................passed
+And I click on "Estimates.EstimateNumberCreated"............................passed
+And I wait till "Common.Loading" is "Invisible".............................passed
+And I verify "Estimates.CustomerInputBox"...................................passed
+And I wait for "2" seconds..................................................passed
+Then I click on "Multiple Qtys:Common.DepartmentMenu".......................passed
+And I wait for "2" seconds..................................................passed
+And I enter "63689" in "Estimates.MQTextBox"................................passed
+And I click on "Estimates.MQUpdateButton"...................................passed
+And I wait till "Common.Loading" is "Invisible".............................passed
+And I click on "Estimates.MQExportToOrder"..................................passed
+And I wait till "Common.Loading" is "Invisible".............................passed
+And I verify "Estimate Exported to Order Successfully:Orders.ExportedToOrderSuccessfullyMsg".passed
+And I wait for "2" seconds..................................................passed
+And I click on "Orders.ExportedToOrderOKBtn"................................passed
+And I wait for "2" seconds..................................................passed
+And I verify "Orders.AccountWarningMsg".....................................passed
+And I click on "Orders.WarningMsgOk"........................................passed
+And I wait for "2" seconds..................................................passed
+Then I click on "Save:Common.Button"........................................passed
+And I wait for "1" seconds..................................................passed
+Then checked "810,350.10" in "Total & Tax:Common.TotalAndTaxes".............passed
+And I click on "Save & Close:Common.Button".................................passed
+And I click on "Common.Estimates"...........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Estimates Taxes Test Cases" name="Open an Estimate. Update Qty from line item and Verify new Total and Taxes." time="101.590194">
+<system-out><![CDATA[Given I login to Application................................................passed
+And I click on "Login.SignIn"...............................................passed
+Then I verify "Common.LandingPage"..........................................passed
+When I click on "Common.Estimates"..........................................passed
+And I wait for "1" seconds..................................................passed
+And I verify "Estimates.EstimateSearchPage".................................passed
+And I click on "Common.ClearFilters"........................................passed
+And I wait for "1" seconds..................................................passed
+And I click on "Estimates.EstimateNumberCreated"............................passed
+And I wait till "Common.Loading" is "Invisible".............................passed
+And I verify "Estimates.CustomerInputBox"...................................passed
+And I wait for "2" seconds..................................................passed
+Then I click on "Data:Common.DepartmentMenu"................................passed
+And I wait till "Common.Loading" is "Invisible".............................passed
+And I clear the text "0:Common.QuantityTextBox".............................passed
+And I wait for "2" seconds..................................................passed
+And I enter "588.321" in "0:Common.QuantityTextBox".........................passed
+And I wait for "2" seconds..................................................passed
+And I click on "0:Common.UnitPriceTextBox"..................................passed
+And I verify "Keep existing Unit Price?:Common.UnitPricePopUp"..............passed
+And I wait for "5" seconds..................................................passed
+And I click on "Common.UnitPriceUpdateNoBtn"................................passed
+And I wait for "2" seconds..................................................passed
+And I click on "Save:Common.Button".........................................passed
+And I wait for "1" seconds..................................................passed
+Then checked "13469.15" in "Total & Tax:Common.TotalAndTaxes"...............passed
+And I click on "Save & Close:Common.Button".................................passed
+And I click on "Common.Estimates"...........................................passed
+]]></system-out>
+</testcase>
+</testsuite>

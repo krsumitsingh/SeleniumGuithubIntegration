@@ -1,0 +1,134 @@
+Login:
+  UserName: //input[@id='PnlLoginPage_loginControl_UserName']
+  Password: //input[@id='PnlLoginPage_loginControl_Password']
+  SignIn: //table[@id='PnlLoginPage_loginControl_LoginButton']
+Common:
+  LandingPage: //form[@action='./']
+  HomePage: //form[@action='./default.aspx']
+  Estimates: //a[text()='Estimates']
+  Orders: //a[text()='Orders']
+  CRM: //a[text()='CRM']
+  ResetFilters: //a[text()='Reset Filters']
+  ClearFilters: //*[contains(@title,'Clear')]
+  Loading: //table[@class='dxlpLoadingPanel_Office2003Silver' and not (contains(@style,'display:none'))]//span[text()='Loading�']
+  InputField: //td[label[text()='VARIABLE']]/following-sibling::td[1]//input[@tabindex][@style]
+  InputField_s: //td[span[text()='VARIABLE']]/following-sibling::td[1]//input[@style]
+  Button: //span[text()='VARIABLE']
+  WarningMsgOk: //input[@id='ctl00_mainContentPlaceHolder_btWOk']
+  Prompt_YES: //td[@id='ctl00_yesButton_B']
+  DropDownOption_td: //td[text()='VARIABLE']
+  DepartmentMenu: //*[@class='dxmMenuItem']/*[text()='VARIABLE']
+  ServiceOption: //tr[not (@style)]/td[text()='VARIABLE']
+  ServiceComboBox: //table[@id='ctl00_mainContentPlaceHolder_ASPxCallbackPanelServiceGrid_serviceGridView_cellVARIABLE_1_pnlGridViewServices_serviceCodeEditComboBox']//td[@class='dxic']/input
+  ServiceDescriptionEditBox: //*[@id='ctl00_mainContentPlaceHolder_ASPxCallbackPanelServiceGrid_serviceGridView_cellVARIABLE_2_serviceNameEditTextBox_I']
+  QuantityTextBox: .//*[@id='ctl00_mainContentPlaceHolder_ASPxCallbackPanelServiceGrid_serviceGridView_cellVARIABLE_3_quantityEditTextBox_I']
+  UnitPriceTextBox: //table[@id='ctl00_mainContentPlaceHolder_ASPxCallbackPanelServiceGrid_serviceGridView_cellVARIABLE_4_unitPriceEditTextBox']//td[@class='dxic']/input
+  UnitPricePopUp: //*[contains(@id,'unitPricePopupControl_ASPxPanel1_ASPxLabel18')]
+  UnitPriceUpdateNoBtn: //*[contains(@id,'btnUnitPriceUpdateNo_CD')]/span
+  UpdateQtyField: //*[contains(@id,'updateQuantityTextBox_I')]
+  UpdateQtyButton: //*[contains(@id,'updateQuantityButton_CD')]/span
+  UpdateQtyPopup: //*[@id='ctl00_iframeCommonPopup']
+  UpdateQtyPopupMessage: //*[contains(@class,'pnlCalculateBookBody')]
+  QtyUpdatePopupYesButton: //*[@id='btnpnlCommonMsgPopupYes_CD']/span
+  QtyUpdatePopupNoButton: //*[@id='btnpnlCommonMsgPopupNo_CD']/span
+  WizardServicePopup: //*[@id='ctl00_mainContentPlaceHolder_iframeServiceWizard']
+  WizardServicePopupMessage: //*[contains(@id,'serviceWizardDescriptionTextLabel')]
+  WizardSuccessorSelected: //*[@id='serviceWizardGridView_cellVARIABLE_0_wizardTextButton_CD']
+  WideFormatCalculator: //*[@id='ctl00_mainContentPlaceHolder_iframeWideFormat']
+  WideFormatEstimate: //*[contains(@id,'ASPxLabel72')]
+  SWFComboBox: //*[@name='VARIABLEDropDownList']
+  WFMessageEditor: //*[@name='wfMessageEditor']
+  WFSaveButton: //*[@id='wfItemProcessButton']//span
+  AWFTemplateName: //*[contains(@tabindex,'1')]
+  Description: //*[contains(@tabindex,'6')] 
+  CalculateButton: //*[contains(@id,'MainPrintPnl_btnCalculate_CD')]/span
+  PrintCalculator: //*[@id='ctl00_mainContentPlaceHolder_iframePrintCalculator']	
+  PCTemplateName: //*[contains(@tabindex,'2')]
+  #PrintCalculateButton: //*[@class='dxb']//*[text()='Calculate']
+  PrintCalculateButton: //span[text()='Calculate']
+  PrintSubmitButton: //*[@class='dxb']//*[text()='Submit']
+  PrintCancelButton: //*[@id='MainPrintPnl_PECancelButton_CD']/span
+  #HeaderTabs1: //*[contains(@id,'DXIVARIABLE_T')]/span 
+  HeaderTabs: //td[contains(@class,'subMenuAsTabItems')]//span[text()='VARIABLE']
+  UploadFileButton: //*[@id='ctl00_mainContentPlaceHolder_linksGridView_footer1_fileUpload_Input_0']
+  POTextBox: //input[contains(@id,'poTextBox')]
+  TotalAndTaxes1: //div[contains(@class,'divDisabled')]//label[text()='VARIABLE']
+  TotalAndTaxes: //td[label[text()='VARIABLE']]/following-sibling::td[1]//label[@id]
+  DateDue: //input[contains(@id,'dropDateDateEdit_I')]
+  ServiceInfoPage: //iframe[@id='ctl00_iframeCommonPopup']
+  ServiceInfoLabel: //div[@class='popUpContent']//label[text()='VARIABLE']
+  ServiceInfoTaxableCheckbox: //span[@class='dxeBase' and @id='taxableCheckBox']
+  ServiceInfoPageSaveandClose: //div[@id='submitButton_CD']/span
+  TaxableCheckBox: //input[contains(@id,'taxableCustomerCheckBox_I')]
+  
+  
+  
+  #text: //div[@id='servicesView']//tr[contains(@id,'DataRow0')]//table[@id='ctl00_mainContentPlaceHolder_ASPxCallbackPanelServiceGrid_serviceGridView_cell0_1_pnlGridViewServices_serviceCodeEditComboBox']
+
+Estimates:
+  EstimateSearchPage: //label[text()='Estimate Search']
+  ProjectFilterSearch: //tr[@class='dxgvFilterRow gridfilterrow']//input[@name='ctl00$mainContentPlaceHolder$estimateSearchGridView$DXFREditorcol1'] 
+  EstimateNumberCreated: //*[contains(@id,'estimateSearchGridView_tccell0_0')]/a
+  EstimateNumberSearchBox: //*[contains(@id,'estimateSearchGridView_DXFREditorcol0_I')]
+  #EstimateSearchbox: //input[@id='ctl00_mainContentPlaceHolder_estimateSearchGridView_DXFREditorcol0_I']
+  EstimateProjectRow: //td[@id='ctl00_mainContentPlaceHolder_estimateSearchGridView_tccell0_1']/a[contains(text(),'VARIABLE')]
+  EstimateNumberRow: //*[contains(@id,'estimateSearchGridView_DXFREditorcol0_I')]/a[contains(text(),'VARIABLE')]
+  CustomerInputBox: //td[a[text()='Customer']]/following-sibling::td[1]//input[@tabindex]
+  PromptBoxText: //div[@class='pnlPromptBox']//label[text()='VARIABLE']
+  CopyMessageBox: //div[@class='pnlPromptBox']
+  EstimateCopiedBtnOK: //*[contains(@id,'btEstimateCopied')]
+  ExportToOrder: //*[contains(@id,'EstToOrderButton_CD')]/span
+  MQTextBox: //*[contains(@id,'multipleQuantityTwoTextBox_I')]
+  MQUpdateButton: //*[contains(@id,'multipleQuantityButton_CD')]/span
+  MQExportToOrder: //*[contains(@id,'multiplePricingTwoExportLinkButton')]
+  ServiceInfoDetailsButton: .//*[@id='ctl00_mainContentPlaceHolder_ASPxCallbackPanelServiceGrid_serviceGridView_cellVARIABLE_6_estimateDetailButton_BImg']
+  
+  
+  
+Orders:
+  OrderSearchLabel: //label[text()='Order Search']
+  OrderNoSearchBox: //input[@id='ctl00_mainContentPlaceHolder_orderSearchGridView_DXFREditorcol0_I']
+  ExportedToOrderSuccessfullyMsg: //*[contains(@id,'CopiedMsgLabel')]
+  ExportedToOrderOKBtn: //*[contains(@id,'btEstimateCopied')]
+  AccountWarningMsg: //span[text()='Account Warning Message:']
+  WarningMsgOk: //input[@id='ctl00_mainContentPlaceHolder_btWOk']
+  CustomerInputBox: //td[a[text()='Customer']]/following-sibling::td[1]//input[@tabindex]
+  PromptBoxText: //div[@class='pnlPromptBox']//span[text()='VARIABLE']
+  ProjectFilterSearch: //input[contains(@id,'DXFREditorcol1_I')]
+  OrderProjectRow: //td[contains(@id,'tccell0_1')]/a[contains(text(),'VARIABLE')]
+  CustomerInputBox: //td[a[text()='Customer']]/following-sibling::td[1]//input[@tabindex]
+  Project: //input[contains(@id,'projectTextBox_I')]
+  OrderSearchPage: //label[text()='Order Search']
+  ExpectedQuantity: //input[contains(@id,'expectedQuantityTextBox_I')]
+  OrderServiceComboBox: //input[@id='ctl00_mainContentPlaceHolder_ASPxCallbackPanelServiceGrid_serviceGridView_cellVARIABLE_1_pnlGridViewServices_serviceCodeComboBox_I']
+  OrderServiceWizard: //td[contains(@id,'serviceCodeComboBox_DDD_L_LBI2T0')]
+  OrderNumberCreated: //td[contains(@id,'orderSearchGridView_tccell0_0')]/a
+  OrderSimpleWideFormat: //td[contains(@id,'serviceCodeComboBox_DDD_L_LBI1T0')]
+  WideFormatLabel: //label[@id='ASPxLabel14']
+  OrderAdvanceWideFormat: //td[contains(@id,'serviceCodeComboBox_DDD_L_LBI1T0')]
+  CopyMessageBox: //div[contains(@id,'updpnlOrderCopied')]
+  OrderCopiedBtnOK: //input[contains(@id,'btOrderCopied')]
+  ExportToEstimateButton: //div[contains(@class,'dxb')]//span[text()='VARIABLE']
+  ExportedToEsitmateOKBtn: //input[contains(@id,'ExportToEstimateButton')]
+  ExportedToEstimateSuccessfullyMsg: //span[contains(@id,'ExportToEstimateMsgLabel')]
+  ServiceDescriptionEditBox: //input[@id='ctl00_mainContentPlaceHolder_ASPxCallbackPanelServiceGrid_serviceGridView_cellVARIABLE_2_serviceNameTextBox_I']
+  QuantityTextBox: //input[@id='ctl00_mainContentPlaceHolder_ASPxCallbackPanelServiceGrid_serviceGridView_cellVARIABLE_3_quantityTextBox_I']
+  UnitPriceTextBox: //input[@id='ctl00_mainContentPlaceHolder_ASPxCallbackPanelServiceGrid_serviceGridView_cellVARIABLE_4_unitPriceTextBox_I']
+  UnitPricePopUp: //td[contains(@id,'unitPricePopupControl_PWC-1')]
+  DueDate: //input[contains(@id,'dropDateDateEdit_I')]
+  TimeDue: //input[contains(@id, 'timeDueTimeEdit_I')]
+  
+  
+CRM:
+  CRMSerachLabel: //label[text()='CRM Search']
+  CustomerSearchBox: //input[@id='ctl00_mainContentPlaceHolder_customerGridView_DXFREditorcol0_I']
+  NewCustomerBtn: //span[text()='New Customer']
+  CustomerLabel: //label[text()='Customer']
+  CustomerCode: //td[label[text()='Customer Code']]/following-sibling::td[1]//input
+  AccountWarningMessage: .//*[@id='ctl00_mainContentPlaceHolder_warningCheckBox_I']
+  TaxableCheckBox: //input[contains(@id,'taxableCheckBox_I')]
+  TaxJurisdictionComboBox: //input[contains(@id,'taxJurisdictionComboBox_I')]
+  
+  
+  #H_Date: //tr/td[contains(translate(text(),'ABCDEFGHIJKLMNOPQRSTUVWXYZ--', 'abcdefghijklmnopqrstuvwxyz--'),"VARIABLE1")]/..//td[1][contains(translate(text(),'ABCDEFGHIJKLMNOPQRSTUVWXYZ--', 'abcdefghijklmnopqrstuvwxyz--'),"VARIABLE2")]
+    
